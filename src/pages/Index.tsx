@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { IterationBasic } from "@/components/IterationBasic";
@@ -55,10 +56,10 @@ const Index = () => {
         />
       </div>
 
-      {/* Professional Navigation */}
+      {/* Professional Navigation - Lightened fonts */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 glass-morph rounded-full px-6 py-3 shadow-lg border border-slate-200/50">
         <div className="flex items-center space-x-6">
-          <div className="text-lg font-semibold text-slate-800 tracking-tight">
+          <div className="text-lg font-medium text-slate-500 tracking-tight">
             Loom
           </div>
           <div className="hidden md:flex space-x-1 text-sm">
@@ -71,10 +72,10 @@ const Index = () => {
               <button
                 key={id}
                 onClick={() => handleNavClick(id)}
-                className={`px-3 py-1.5 rounded-full transition-all duration-200 text-sm font-medium ${
+                className={`px-3 py-1.5 rounded-full transition-all duration-200 text-sm font-normal ${
                   activeSection === id 
                     ? 'bg-indigo-500 text-white shadow-sm' 
-                    : 'text-slate-600 hover:text-slate-800 hover:bg-slate-50'
+                    : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
                 }`}
               >
                 {label}

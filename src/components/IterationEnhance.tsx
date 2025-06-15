@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const IterationEnhance = () => {
@@ -46,7 +45,7 @@ export const IterationEnhance = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <div className="inline-flex items-center space-x-2 px-4 py-2 glass-morph text-slate-700 text-sm rounded-full shadow-sm border border-slate-200/50">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 glass-morph text-slate-800 text-sm rounded-full shadow-sm border border-slate-200/50">
               <span className="font-mono text-xs">03</span>
               <span className="text-slate-400">/</span>
               <span>Iteration 3</span>
@@ -54,7 +53,7 @@ export const IterationEnhance = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-              <span className="text-slate-800">Weaving</span>
+              <span className="text-slate-900">Weaving</span>
               <br />
               <span className="text-gradient-primary">
                 Intricate Patterns
@@ -62,11 +61,11 @@ export const IterationEnhance = () => {
             </h2>
             
             <div className="space-y-6">
-              <p className="text-lg text-slate-700 font-medium leading-relaxed">
+              <p className="text-lg text-slate-800 font-semibold leading-relaxed">
                 "Beyond the basics: where design meets dynamic interaction."
               </p>
               
-              <p className="text-base text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-700 leading-relaxed">
                 Complexity emerges with grace. Claude now interprets nuanced design language, 
                 creating responsive layouts with sophisticated animations. Every micro-interaction tells a story, 
                 every transition serves a purpose.
@@ -74,11 +73,11 @@ export const IterationEnhance = () => {
             </div>
             
             <div className="space-y-4 p-6 glass-morph rounded-xl border border-slate-200/30 shadow-sm">
-              <div className="text-xs text-slate-500 font-mono uppercase tracking-wider">Advanced Input</div>
+              <div className="text-xs text-slate-600 font-mono uppercase tracking-wider">Advanced Input</div>
               <div className="bg-white p-4 rounded-lg border border-slate-200 font-mono text-sm shadow-sm">
                 "responsive hero with animated background and glowing CTA"
               </div>
-              <div className="flex items-center space-x-3 text-xs text-slate-500">
+              <div className="flex items-center space-x-3 text-xs text-slate-600">
                 <div className="flex space-x-1">
                   <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse" />
                   <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }} />
@@ -142,7 +141,7 @@ export const IterationEnhance = () => {
               </div>
             </div>
 
-            <div className="mt-6 text-center text-sm text-slate-600 font-medium">
+            <div className="mt-6 text-center text-sm text-slate-700 font-semibold">
               Interaction becomes an art form
             </div>
           </div>

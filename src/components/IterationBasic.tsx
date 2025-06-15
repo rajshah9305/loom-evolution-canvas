@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const IterationBasic = () => {
@@ -42,18 +41,18 @@ export const IterationBasic = () => {
               <span>Iteration 1</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
               The Seed of 
               <br />
-              <span className="text-slate-500">an Idea</span>
+              <span className="text-slate-700">an Idea</span>
             </h2>
             
             <div className="space-y-6">
-              <p className="text-lg text-slate-700 font-medium">
+              <p className="text-lg text-slate-800 font-semibold">
                 "What if UI could be woven from words?"
               </p>
               
-              <p className="text-base text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-700 leading-relaxed">
                 Every masterpiece begins with a simple foundation. Here, Claude takes its first steps, 
                 translating basic prompts into clean structure. The aesthetic is minimalist by design—
                 wireframes brought to life with purpose and potential.
@@ -61,11 +60,11 @@ export const IterationBasic = () => {
             </div>
             
             <div className="space-y-4 p-6 glass-effect rounded-xl border border-slate-200/50">
-              <div className="text-xs text-slate-500 font-mono uppercase tracking-wider">Input</div>
+              <div className="text-xs text-slate-600 font-mono uppercase tracking-wider">Input</div>
               <div className="bg-white p-4 rounded-lg border border-slate-200 font-mono text-sm shadow-sm">
                 "create a simple header with logo and navigation"
               </div>
-              <div className="flex items-center space-x-2 text-xs text-slate-400">
+              <div className="flex items-center space-x-2 text-xs text-slate-500">
                 <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" />
                 <span>Processing basic structure...</span>
               </div>
@@ -99,7 +98,7 @@ export const IterationBasic = () => {
               </div>
             </div>
 
-            <div className="mt-6 text-center text-sm text-slate-500 font-medium">
+            <div className="mt-6 text-center text-sm text-slate-600 font-semibold">
               Basic structure, infinite potential
             </div>
           </div>

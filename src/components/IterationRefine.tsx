@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const IterationRefine = () => {
@@ -43,7 +42,7 @@ export const IterationRefine = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-              <span className="text-slate-800">Adding Threads</span>
+              <span className="text-slate-900">Adding Threads</span>
               <br />
               <span className="text-gradient-primary">
                 of Style
@@ -51,11 +50,11 @@ export const IterationRefine = () => {
             </h2>
             
             <div className="space-y-6">
-              <p className="text-lg font-medium leading-relaxed text-indigo-700">
+              <p className="text-lg font-semibold leading-relaxed text-indigo-800">
                 "From structure to style: watching your words take shape."
               </p>
               
-              <p className="text-base text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-700 leading-relaxed">
                 The foundation grows more sophisticated. Claude now understands aesthetic language, 
                 transforming simple styling requests into beautiful, cohesive designs. Colors emerge, 
                 shadows dance, and personality begins to shine through.
@@ -63,11 +62,11 @@ export const IterationRefine = () => {
             </div>
             
             <div className="space-y-4 p-6 glass-effect rounded-xl border border-indigo-200/30">
-              <div className="text-xs text-indigo-600 font-mono uppercase tracking-wider">Enhanced Input</div>
+              <div className="text-xs text-indigo-700 font-mono uppercase tracking-wider">Enhanced Input</div>
               <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm font-mono text-sm">
                 "make the buttons blue and rounded, add subtle shadows"
               </div>
-              <div className="flex items-center space-x-3 text-xs text-indigo-500">
+              <div className="flex items-center space-x-3 text-xs text-indigo-600">
                 <div className="flex space-x-1">
                   <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse" />
                   <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
@@ -118,7 +117,7 @@ export const IterationRefine = () => {
               </div>
             </div>
 
-            <div className="mt-6 text-center text-sm text-indigo-600 font-medium">
+            <div className="mt-6 text-center text-sm text-indigo-700 font-semibold">
               Style meets structure in perfect harmony
             </div>
           </div>
