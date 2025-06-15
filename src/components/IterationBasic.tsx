@@ -22,111 +22,193 @@ export const IterationBasic = () => {
 
   return (
     <section id="basic" className="min-h-screen flex items-center gradient-evolution-basic relative overflow-hidden">
-      {/* Minimal wireframe grid */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-24 gap-px h-full w-full">
-          {Array.from({ length: 576 }).map((_, i) => (
+      {/* Enhanced minimal wireframe grid with subtle depth */}
+      <div className="absolute inset-0 opacity-8">
+        <div className="grid grid-cols-32 gap-px h-full w-full">
+          {Array.from({ length: 1024 }).map((_, i) => (
             <div 
               key={i} 
-              className="border border-slate-800"
+              className="border border-slate-800/20 transition-all duration-1000"
               style={{
-                animationDelay: `${(i * 0.01)}s`
+                animationDelay: `${(i * 0.005)}s`,
+                animation: `wireframe-pulse ${4 + (i % 3)}s ease-in-out infinite`
               }}
             />
           ))}
         </div>
       </div>
 
-      {/* Foundational dots */}
+      {/* Floating conceptual particles */}
       <div className="absolute inset-0">
-        {Array.from({ length: 3 }).map((_, i) => (
+        {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full"
+            className="absolute rounded-full transition-all duration-1000"
             style={{
+              width: `${4 + i * 2}px`,
+              height: `${4 + i * 2}px`,
               backgroundColor: `hsl(var(--evolution-foundation))`,
-              left: `${20 + i * 30}%`,
-              top: `${40 + i * 10}%`,
-              animation: `wireframe-pulse ${3 + i}s ease-in-out infinite`
+              left: `${15 + i * 12}%`,
+              top: `${30 + i * 8}%`,
+              opacity: 0.6 - i * 0.05,
+              animation: `sophisticated-float ${4 + i * 0.5}s ease-in-out infinite`,
+              animationDelay: `${i * 0.3}s`,
+              boxShadow: `0 0 ${10 + i * 5}px hsl(var(--evolution-foundation) / 0.3)`
             }}
           />
         ))}
       </div>
 
+      {/* Conceptual connection lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg
+            key={i}
+            className="absolute opacity-20"
+            style={{
+              left: `${10 + i * 15}%`,
+              top: `${20 + i * 10}%`,
+              width: '100px',
+              height: '100px'
+            }}
+          >
+            <path
+              d={`M0,50 Q50,${20 + i * 10} 100,50`}
+              stroke={`hsl(var(--evolution-shadow))`}
+              strokeWidth="1"
+              fill="none"
+              strokeDasharray="5,5"
+              className="animate-pulse"
+            />
+          </svg>
+        ))}
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className={`transition-all duration-1200 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="space-y-8">
-              <div className="inline-block px-3 py-1 bg-slate-900 text-white text-xs rounded border border-slate-700">
-                Iteration 1 • Foundation
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <div className={`transition-all duration-1500 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'}`}>
+            <div className="space-y-10">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-sm rounded-lg border border-slate-700 shadow-xl">
+                <span className="flex items-center space-x-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Iteration 1 • Foundation</span>
+                </span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-light text-slate-900 leading-tight tracking-tight">
+              
+              <h2 className="text-6xl md:text-7xl font-light text-slate-900 leading-tight tracking-tight">
                 The Seed of
                 <br />
-                <span className="font-bold" style={{ color: `hsl(var(--evolution-foundation))` }}>
+                <span className="font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                   an Idea
                 </span>
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed font-light">
+              
+              <p className="text-2xl text-slate-600 leading-relaxed font-light italic">
                 "What if UI could be woven from words?"
               </p>
-              <p className="text-slate-500 leading-relaxed">
+              
+              <p className="text-lg text-slate-500 leading-relaxed max-w-lg">
                 Every masterpiece begins with pure intention. Here, Claude Sonnet 4 takes its first breath, 
                 translating conceptual whispers into structural reality. The aesthetic embraces minimalism—
                 wireframes as poetry, potential distilled to its essence.
               </p>
               
-              <div className="space-y-4">
-                <div className="text-xs text-slate-400 font-mono tracking-wide">CONCEPTUAL INPUT</div>
-                <div className="bg-white/80 backdrop-blur p-6 rounded border border-slate-200 font-mono text-sm text-slate-800 shadow-sm">
-                  "create a simple header with logo and navigation"
+              <div className="space-y-6">
+                <div className="text-xs text-slate-400 font-mono tracking-wider uppercase">Conceptual Input</div>
+                <div className="glass-evolution p-8 rounded-2xl font-mono text-sm text-slate-800 shadow-2xl border border-slate-200/50">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-3 h-3 rounded-full bg-emerald-400 mt-1 animate-pulse" />
+                    <div>
+                      <div className="text-slate-500 text-xs mb-2">$ loom create</div>
+                      <div>"create a simple header with logo and navigation"</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2 text-xs text-slate-500">
-                  <div className="w-1 h-1 bg-slate-400 rounded-full animate-pulse" />
+                <div className="flex items-center space-x-3 text-sm text-slate-500">
+                  <div className="flex space-x-1">
+                    {Array.from({ length: 3 }).map((_, i) => (
+                      <div 
+                        key={i}
+                        className="w-1 h-1 bg-slate-400 rounded-full animate-bounce" 
+                        style={{ animationDelay: `${i * 0.2}s` }}
+                      />
+                    ))}
+                  </div>
                   <span>Parsing intent...</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className={`transition-all duration-1200 delay-600 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            {/* Pure wireframe representation */}
-            <div className="bg-white/90 backdrop-blur p-10 rounded border border-slate-200 shadow-lg">
-              <div className="space-y-8">
-                {/* Wireframe header */}
-                <div className="flex justify-between items-center pb-6 border-b border-slate-200">
-                  <div className="w-16 h-6 bg-slate-300 rounded animate-pulse" />
-                  <div className="flex space-x-6">
-                    <div className="w-12 h-4 bg-slate-200 rounded" />
-                    <div className="w-12 h-4 bg-slate-200 rounded" />
-                    <div className="w-12 h-4 bg-slate-200 rounded" />
+          <div className={`transition-all duration-1500 delay-600 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'}`}>
+            {/* Enhanced wireframe representation */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-100 to-white rounded-3xl blur-xl opacity-50" />
+              <div className="relative glass-evolution p-12 rounded-3xl shadow-2xl border border-slate-200/50">
+                <div className="space-y-10">
+                  {/* Wireframe header with subtle animation */}
+                  <div className="flex justify-between items-center pb-8 border-b border-slate-200">
+                    <div className="relative overflow-hidden">
+                      <div className="w-20 h-8 bg-slate-300 rounded animate-pulse" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -translate-x-full animate-[perfect-shimmer_3s_ease-in-out_infinite]" />
+                    </div>
+                    <div className="flex space-x-6">
+                      {Array.from({ length: 3 }).map((_, i) => (
+                        <div 
+                          key={i}
+                          className="w-16 h-5 bg-slate-200 rounded transition-all duration-500 hover:bg-slate-300"
+                          style={{ animationDelay: `${i * 0.1}s` }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Wireframe content */}
-                <div className="space-y-6">
-                  <div className="w-4/5 h-6 bg-slate-300 rounded" />
-                  <div className="space-y-3">
-                    <div className="w-full h-3 bg-slate-200 rounded" />
-                    <div className="w-5/6 h-3 bg-slate-200 rounded" />
-                    <div className="w-3/4 h-3 bg-slate-200 rounded" />
+                  {/* Enhanced wireframe content */}
+                  <div className="space-y-8">
+                    <div className="space-y-3">
+                      <div className="w-5/6 h-8 bg-slate-300 rounded animate-pulse" />
+                      <div className="w-4/5 h-6 bg-slate-200 rounded" />
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div 
+                          key={i}
+                          className="h-4 bg-slate-200 rounded transition-all duration-300"
+                          style={{ 
+                            width: `${100 - i * 8}%`,
+                            animationDelay: `${i * 0.1}s`
+                          }}
+                        />
+                      ))}
+                    </div>
+                    
+                    <div className="flex space-x-4 mt-10">
+                      <div className="w-32 h-12 bg-slate-400 rounded-lg relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full animate-[perfect-shimmer_4s_ease-in-out_infinite]" />
+                      </div>
+                      <div className="w-28 h-12 border-2 border-slate-300 rounded-lg" />
+                    </div>
                   </div>
-                  <div className="w-24 h-8 bg-slate-400 rounded mt-8" />
-                </div>
 
-                {/* Minimal interaction hint */}
-                <div className="pt-4 border-t border-slate-100">
-                  <div className="flex space-x-2">
-                    <div className="w-2 h-2 bg-slate-300 rounded-full" />
-                    <div className="w-2 h-2 bg-slate-300 rounded-full" />
-                    <div className="w-2 h-2 bg-slate-300 rounded-full" />
+                  {/* Conceptual indicators */}
+                  <div className="pt-6 border-t border-slate-100">
+                    <div className="grid grid-cols-4 gap-3">
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div 
+                          key={i}
+                          className="h-3 bg-slate-200 rounded-full animate-pulse"
+                          style={{ animationDelay: `${i * 0.2}s` }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 text-center text-sm text-slate-500 font-light">
-              Structure is the foundation of all beauty
+            <div className="mt-8 text-center text-sm text-slate-500 font-light italic">
+              "Structure is the foundation of all beauty"
             </div>
           </div>
         </div>

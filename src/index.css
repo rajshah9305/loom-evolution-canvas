@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Enhanced design system with sophisticated color evolution */
 
 @layer base {
   :root {
@@ -46,17 +46,19 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Continuous Evolution Color Palette */
-    --evolution-foundation: 240 8% 10%;
-    --evolution-shadow: 238 15% 18%;
-    --evolution-depth: 236 20% 26%;
-    --evolution-accent: 234 25% 34%;
-    --evolution-refined: 232 30% 42%;
-    --evolution-enhanced: 230 35% 50%;
-    --evolution-sophisticated: 228 40% 58%;
-    --evolution-perfect: 226 45% 66%;
-    --evolution-light: 224 50% 74%;
-    --evolution-ethereal: 222 55% 82%;
+    /* Enhanced Evolution Color Palette - More sophisticated progression */
+    --evolution-void: 240 15% 8%;
+    --evolution-foundation: 240 12% 15%;
+    --evolution-shadow: 238 18% 22%;
+    --evolution-depth: 236 25% 32%;
+    --evolution-accent: 234 35% 45%;
+    --evolution-refined: 232 45% 58%;
+    --evolution-enhanced: 230 55% 68%;
+    --evolution-sophisticated: 228 65% 75%;
+    --evolution-perfect: 226 75% 82%;
+    --evolution-light: 224 80% 88%;
+    --evolution-ethereal: 222 85% 94%;
+    --evolution-transcendent: 220 90% 97%;
   }
 
   .dark {
@@ -105,50 +107,70 @@
 }
 
 @layer utilities {
-  /* Evolution-based gradients */
+  /* Enhanced Evolution-based gradients with more sophisticated transitions */
   .gradient-evolution-basic {
     background: linear-gradient(135deg, 
-      hsl(var(--evolution-foundation)) 0%, 
-      hsl(var(--evolution-shadow)) 20%,
-      #f8f9fa 100%);
+      hsl(var(--evolution-void)) 0%,
+      hsl(var(--evolution-foundation)) 25%,
+      hsl(var(--evolution-shadow)) 50%,
+      #fafafa 100%);
+    position: relative;
   }
 
   .gradient-evolution-refine {
     background: linear-gradient(135deg, 
-      hsl(var(--evolution-shadow)) 0%, 
-      hsl(var(--evolution-depth)) 15%,
-      hsl(var(--evolution-accent)) 35%,
-      #e3f2fd 100%);
+      hsl(var(--evolution-foundation)) 0%,
+      hsl(var(--evolution-shadow)) 20%,
+      hsl(var(--evolution-depth)) 40%,
+      hsl(var(--evolution-accent)) 70%,
+      hsl(var(--evolution-refined)) 100%);
+    position: relative;
   }
 
   .gradient-evolution-enhance {
     background: linear-gradient(135deg, 
-      hsl(var(--evolution-depth)) 0%, 
-      hsl(var(--evolution-accent)) 20%,
-      hsl(var(--evolution-refined)) 40%,
-      hsl(var(--evolution-enhanced)) 60%,
-      hsl(var(--evolution-sophisticated)) 100%);
+      hsl(var(--evolution-depth)) 0%,
+      hsl(var(--evolution-accent)) 15%,
+      hsl(var(--evolution-refined)) 30%,
+      hsl(var(--evolution-enhanced)) 50%,
+      hsl(var(--evolution-sophisticated)) 70%,
+      hsl(var(--evolution-perfect)) 100%);
+    background-size: 300% 300%;
+    animation: gradient-evolution-flow 15s ease-in-out infinite;
   }
 
   .gradient-evolution-perfect {
     background: linear-gradient(135deg, 
-      hsl(var(--evolution-enhanced)) 0%, 
-      hsl(var(--evolution-sophisticated)) 20%,
-      hsl(var(--evolution-perfect)) 40%,
-      hsl(var(--evolution-light)) 60%,
-      hsl(var(--evolution-ethereal)) 100%);
+      hsl(var(--evolution-enhanced)) 0%,
+      hsl(var(--evolution-sophisticated)) 15%,
+      hsl(var(--evolution-perfect)) 30%,
+      hsl(var(--evolution-light)) 50%,
+      hsl(var(--evolution-ethereal)) 70%,
+      hsl(var(--evolution-transcendent)) 100%);
     background-size: 400% 400%;
-    animation: gradient-evolution-flow 12s ease-in-out infinite;
+    animation: gradient-evolution-flow 10s ease-in-out infinite;
   }
 
   .glass-evolution {
-    backdrop-filter: blur(16px);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-evolution-enhanced {
+    backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
 
   .text-shadow-evolution {
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .text-shadow-sophisticated {
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
   }
 
   .particle-field::before {
@@ -159,42 +181,115 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 1px, transparent 1px);
-    background-size: 50px 50px, 80px 80px;
-    animation: particle-drift 20s linear infinite;
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+      radial-gradient(circle at 40% 60%, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px, 80px 80px;
+    animation: particle-drift 25s linear infinite;
+  }
+
+  .magnetic-glow {
+    position: relative;
+  }
+
+  .magnetic-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, 
+      transparent, 
+      hsl(var(--evolution-accent)), 
+      transparent, 
+      hsl(var(--evolution-refined)),
+      transparent);
+    border-radius: inherit;
+    z-index: -1;
+    animation: magnetic-rotate 4s linear infinite;
+  }
+
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--evolution-enhanced)),
+      hsl(var(--evolution-sophisticated)),
+      hsl(var(--evolution-perfect)),
+      hsl(var(--evolution-light))
+    );
+    background-size: 300% 300%;
+    animation: holographic-shift 8s ease-in-out infinite;
   }
 }
 
 @keyframes gradient-evolution-flow {
   0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 0% 100%; }
 }
 
 @keyframes particle-drift {
-  0% { transform: translateY(0px) translateX(0px); }
-  33% { transform: translateY(-10px) translateX(5px); }
-  66% { transform: translateY(5px) translateX(-3px); }
-  100% { transform: translateY(0px) translateX(0px); }
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  25% { transform: translateY(-15px) translateX(8px) rotate(90deg); }
+  50% { transform: translateY(-5px) translateX(-12px) rotate(180deg); }
+  75% { transform: translateY(10px) translateX(5px) rotate(270deg); }
+  100% { transform: translateY(0px) translateX(0px) rotate(360deg); }
 }
 
 @keyframes wireframe-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
 }
 
 @keyframes evolution-glow {
-  0%, 100% { box-shadow: 0 0 20px hsla(var(--evolution-accent), 0.3); }
-  50% { box-shadow: 0 0 40px hsla(var(--evolution-refined), 0.6); }
+  0%, 100% { 
+    box-shadow: 0 0 30px hsla(var(--evolution-accent), 0.4),
+                0 0 60px hsla(var(--evolution-refined), 0.2); 
+  }
+  50% { 
+    box-shadow: 0 0 50px hsla(var(--evolution-refined), 0.6),
+                0 0 100px hsla(var(--evolution-enhanced), 0.3); 
+  }
 }
 
 @keyframes sophisticated-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-15px) rotate(2deg); }
-  66% { transform: translateY(-5px) rotate(-1deg); }
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  25% { transform: translateY(-20px) rotate(5deg) scale(1.05); }
+  50% { transform: translateY(-10px) rotate(-3deg) scale(0.98); }
+  75% { transform: translateY(-15px) rotate(2deg) scale(1.02); }
 }
 
 @keyframes perfect-shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(120%) skewX(-15deg); }
+}
+
+@keyframes magnetic-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes holographic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 25%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 25% 0%; }
+}
+
+@keyframes transcendent-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.8;
+    filter: blur(0px);
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 1;
+    filter: blur(1px);
+  }
+}
+
+@keyframes cosmic-drift {
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  33% { transform: translateY(-30px) translateX(15px) rotate(120deg); }
+  66% { transform: translateY(20px) translateX(-20px) rotate(240deg); }
+  100% { transform: translateY(0px) translateX(0px) rotate(360deg); }
 }

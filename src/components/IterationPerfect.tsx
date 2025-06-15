@@ -22,122 +22,137 @@ export const IterationPerfect = () => {
 
   return (
     <section id="perfect" className="min-h-screen flex items-center gradient-evolution-perfect relative overflow-hidden">
-      {/* Ethereal particle constellation */}
+      {/* Transcendent particle universe */}
       <div className="absolute inset-0">
-        {Array.from({ length: 40 }).map((_, i) => (
+        {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full opacity-60"
             style={{
-              width: `${6 + Math.random() * 20}px`,
-              height: `${6 + Math.random() * 20}px`,
-              background: `radial-gradient(circle, hsla(var(--evolution-perfect), 0.8), hsla(var(--evolution-ethereal), 0.3))`,
+              width: `${4 + Math.random() * 24}px`,
+              height: `${4 + Math.random() * 24}px`,
+              background: `radial-gradient(circle, hsla(var(--evolution-perfect), 0.9), hsla(var(--evolution-ethereal), 0.5), hsla(var(--evolution-transcendent), 0.3))`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `sophisticated-float ${5 + Math.random() * 5}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 4}s`,
-              filter: 'blur(0.5px)',
-              boxShadow: `0 0 ${10 + Math.random() * 20}px hsla(var(--evolution-perfect), 0.6)`
+              animation: `cosmic-drift ${4 + Math.random() * 8}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+              filter: 'blur(0.8px)',
+              boxShadow: `0 0 ${20 + Math.random() * 40}px hsla(var(--evolution-perfect), 0.8)`
             }}
           />
         ))}
       </div>
 
-      {/* Cosmic light streams */}
+      {/* Ethereal light symphony */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {Array.from({ length: 16 }).map((_, i) => (
           <div
             key={i}
-            className="absolute opacity-30"
+            className="absolute opacity-35"
             style={{
               width: '1px',
-              height: '120%',
+              height: '130%',
               background: `linear-gradient(180deg, 
                 transparent 0%, 
-                hsla(var(--evolution-perfect), 0.6) 20%, 
-                hsla(var(--evolution-light), 0.8) 50%, 
-                hsla(var(--evolution-ethereal), 0.6) 80%, 
+                hsla(var(--evolution-perfect), 0.8) 15%, 
+                hsla(var(--evolution-light), 0.9) 35%, 
+                hsla(var(--evolution-ethereal), 0.8) 65%, 
+                hsla(var(--evolution-transcendent), 0.6) 85%, 
                 transparent 100%)`,
-              left: `${5 + i * 8}%`,
-              transform: `rotate(${-15 + i * 2.5}deg)`,
-              animation: `perfect-shimmer ${12 + i * 3}s ease-in-out infinite`,
-              animationDelay: `${i * 0.3}s`,
-              filter: 'blur(0.5px)'
+              left: `${3 + i * 6}%`,
+              transform: `rotate(${-25 + i * 3}deg)`,
+              animation: `perfect-shimmer ${20 + i * 4}s ease-in-out infinite`,
+              animationDelay: `${i * 0.2}s`,
+              filter: 'blur(1px)'
             }}
           />
         ))}
       </div>
 
-      {/* Ambient glow layers */}
+      {/* Transcendent ambient cosmos */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20"
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-25"
              style={{ 
-               background: `radial-gradient(circle, hsla(var(--evolution-perfect), 0.4), transparent 70%)`,
-               filter: 'blur(80px)',
-               animation: 'sophisticated-float 20s ease-in-out infinite'
+               background: `radial-gradient(circle, hsla(var(--evolution-perfect), 0.6), transparent 70%)`,
+               filter: 'blur(120px)',
+               animation: 'transcendent-pulse 30s ease-in-out infinite'
              }} />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-15"
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-20"
              style={{ 
-               background: `radial-gradient(circle, hsla(var(--evolution-ethereal), 0.5), transparent 70%)`,
-               filter: 'blur(60px)',
-               animation: 'sophisticated-float 25s ease-in-out infinite reverse'
+               background: `radial-gradient(circle, hsla(var(--evolution-ethereal), 0.7), transparent 70%)`,
+               filter: 'blur(100px)',
+               animation: 'transcendent-pulse 35s ease-in-out infinite reverse'
+             }} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full opacity-15 transform -translate-x-1/2 -translate-y-1/2"
+             style={{ 
+               background: `radial-gradient(circle, hsla(var(--evolution-transcendent), 0.8), transparent 70%)`,
+               filter: 'blur(80px)',
+               animation: 'transcendent-pulse 40s ease-in-out infinite'
              }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          <div className={`transition-all duration-1500 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="space-y-10">
-              <div className="inline-block px-8 py-4 text-white text-sm rounded-2xl border border-white/30 backdrop-blur relative overflow-hidden"
+        <div className="grid md:grid-cols-2 gap-24 items-center">
+          <div className={`transition-all duration-2000 delay-600 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
+            <div className="space-y-14">
+              <div className="inline-block px-10 py-5 text-white text-sm rounded-3xl border border-white/40 backdrop-blur relative overflow-hidden"
                    style={{ 
-                     background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.6), hsla(var(--evolution-ethereal), 0.4))`,
-                     boxShadow: `0 12px 40px hsla(var(--evolution-perfect), 0.5)`
+                     background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.8), hsla(var(--evolution-ethereal), 0.6))`,
+                     boxShadow: `0 20px 60px hsla(var(--evolution-perfect), 0.7)`
                    }}>
-                <span className="relative z-10">✨ Iteration 4 • The Masterpiece</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full animate-perfect-shimmer" />
+                <span className="relative z-10 flex items-center space-x-3">
+                  <div className="w-3 h-3 rounded-full bg-pink-200 animate-pulse" style={{ boxShadow: '0 0 10px rgba(255, 255, 255, 0.8)' }} />
+                  <span className="text-lg">✨ Iteration 4 • The Masterpiece</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full animate-[perfect-shimmer_6s_ease-in-out_infinite]" />
               </div>
               
-              <h2 className="text-6xl md:text-7xl font-light text-white leading-tight tracking-tight text-shadow-evolution">
+              <h2 className="text-7xl md:text-8xl font-light text-white leading-tight tracking-tight text-shadow-sophisticated">
                 Your Vision,
                 <br />
-                <span className="font-bold bg-gradient-to-r from-white via-blue-100 to-indigo-100 bg-clip-text text-transparent">
+                <span className="font-bold holographic bg-clip-text text-transparent">
                   Perfectly Woven
                 </span>
               </h2>
               
-              <p className="text-2xl font-medium leading-relaxed"
+              <p className="text-3xl font-medium leading-relaxed italic"
                  style={{ color: `hsl(var(--evolution-ethereal))` }}>
                 "The final form of creation."
               </p>
               
-              <p className="text-white/80 text-xl leading-relaxed">
+              <p className="text-2xl text-white/85 leading-relaxed max-w-xl">
                 The culmination of AI evolution. Claude Sonnet 4 now interprets abstract design concepts 
                 with the intuition of a master craftsperson, generating production-ready interfaces that 
                 rival the finest human-designed experiences.
               </p>
               
-              <div className="space-y-6">
-                <div className="text-sm text-white/60 font-mono tracking-wide">VISIONARY INPUT</div>
-                <div className="glass-evolution p-8 rounded-2xl border font-mono text-lg text-white shadow-2xl relative overflow-hidden"
+              <div className="space-y-10">
+                <div className="text-sm text-white/70 font-mono tracking-wider uppercase">Visionary Input</div>
+                <div className="glass-evolution-enhanced p-12 rounded-3xl border font-mono text-xl text-white shadow-2xl relative overflow-hidden"
                      style={{ 
-                       borderColor: `hsl(var(--evolution-perfect) / 0.5)`,
-                       boxShadow: `0 20px 60px hsla(var(--evolution-perfect), 0.4)`
+                       borderColor: `hsl(var(--evolution-perfect) / 0.6)`,
+                       boxShadow: `0 30px 80px hsla(var(--evolution-perfect), 0.6)`
                      }}>
-                  <span className="relative z-10">"design a futuristic e-commerce experience that evokes wonder"</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -translate-x-full animate-perfect-shimmer" 
-                       style={{ animationDuration: '3s' }} />
+                  <div className="flex items-start space-x-5 relative z-10">
+                    <div className="w-5 h-5 rounded-full bg-pink-300 mt-1 animate-pulse" style={{ boxShadow: '0 0 15px rgba(255, 255, 255, 0.8)' }} />
+                    <div>
+                      <div className="text-white/70 text-sm mb-4">$ loom perfect --transcendent --visionary</div>
+                      <div>"design a futuristic e-commerce experience that evokes wonder"</div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full animate-[perfect-shimmer_7s_ease-in-out_infinite]" />
                 </div>
                 
-                <div className="flex items-center space-x-4 text-sm text-white/80">
-                  <div className="flex space-x-2">
-                    {['perfect', 'light', 'ethereal'].map((level, i) => (
+                <div className="flex items-center space-x-5 text-lg text-white/85">
+                  <div className="flex space-x-3">
+                    {['perfect', 'light', 'ethereal', 'transcendent'].map((level, i) => (
                       <div 
                         key={level}
-                        className="w-3 h-3 rounded-full animate-pulse" 
+                        className="w-4 h-4 rounded-full animate-pulse" 
                         style={{ 
                           backgroundColor: `hsl(var(--evolution-${level}))`,
-                          animationDelay: `${i * 0.3}s`,
-                          boxShadow: `0 0 10px hsl(var(--evolution-${level}))`
+                          animationDelay: `${i * 0.4}s`,
+                          boxShadow: `0 0 15px hsl(var(--evolution-${level}))`
                         }} 
                       />
                     ))}
@@ -145,133 +160,136 @@ export const IterationPerfect = () => {
                   <span>Crafting digital poetry...</span>
                 </div>
 
-                <button className="mt-12 px-12 py-6 text-white font-bold rounded-3xl shadow-2xl transition-all duration-700 transform hover:scale-110 relative overflow-hidden group text-lg"
+                <button className="mt-16 px-16 py-8 text-white font-bold rounded-3xl shadow-2xl transition-all duration-1000 transform hover:scale-115 relative overflow-hidden group text-xl"
                         style={{ 
-                          background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.9), hsla(var(--evolution-ethereal), 0.7))`,
-                          boxShadow: `0 20px 60px hsla(var(--evolution-perfect), 0.6)`
+                          background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.9), hsla(var(--evolution-ethereal), 0.8))`,
+                          boxShadow: `0 25px 70px hsla(var(--evolution-perfect), 0.8)`
                         }}>
                   <span className="relative z-10">Experience Loom Yourself</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-white/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
+                  <div className="absolute inset-0 bg-white/15 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                 </button>
               </div>
             </div>
           </div>
 
-          <div className={`transition-all duration-1500 delay-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            {/* Perfect UI Demo - The Masterpiece */}
+          <div className={`transition-all duration-2000 delay-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+            {/* The Ultimate Masterpiece UI */}
             <div className="relative">
-              {/* Aura effect */}
-              <div className="absolute inset-0 rounded-3xl blur-2xl opacity-60"
+              {/* Transcendent aura matrix */}
+              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-60"
                    style={{ 
-                     background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.4), hsla(var(--evolution-ethereal), 0.3))`,
-                     transform: 'scale(1.1)'
+                     background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.6), hsla(var(--evolution-ethereal), 0.5))`,
+                     transform: 'scale(1.3)',
+                     animation: 'transcendent-pulse 25s ease-in-out infinite'
                    }} />
               
-              <div className="relative glass-evolution p-12 rounded-3xl shadow-2xl border border-white/30 overflow-hidden"
+              <div className="relative glass-evolution-enhanced p-16 rounded-3xl shadow-2xl border border-white/50 overflow-hidden"
                    style={{ 
-                     boxShadow: `0 30px 80px hsla(var(--evolution-perfect), 0.5)`
+                     boxShadow: `0 40px 100px hsla(var(--evolution-perfect), 0.7)`
                    }}>
-                {/* Ambient background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-blue-500/5 rounded-3xl" />
+                {/* Cosmic background symphony */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-purple-500/10 rounded-3xl" />
                 
-                <div className="space-y-10 relative">
-                  {/* Perfect header */}
-                  <div className="flex justify-between items-center pb-8 border-b border-white/20">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-2xl flex items-center justify-center relative overflow-hidden"
+                <div className="space-y-14 relative">
+                  {/* Transcendent header */}
+                  <div className="flex justify-between items-center pb-12 border-b border-white/30">
+                    <div className="flex items-center space-x-6">
+                      <div className="w-16 h-16 rounded-3xl flex items-center justify-center relative overflow-hidden"
                            style={{ 
                              background: `linear-gradient(135deg, hsl(var(--evolution-perfect)), hsl(var(--evolution-ethereal)))`,
-                             animation: 'gradient-evolution-flow 6s ease-in-out infinite',
-                             boxShadow: `0 0 20px hsla(var(--evolution-perfect), 0.6)`
+                             animation: 'holographic-shift 4s ease-in-out infinite',
+                             boxShadow: `0 0 40px hsla(var(--evolution-perfect), 0.9)`
                            }}>
-                        <span className="text-white font-bold text-xl">F</span>
+                        <span className="text-white font-bold text-3xl">F</span>
                       </div>
-                      <span className="text-white font-bold text-2xl">FutureShop</span>
+                      <span className="text-white font-bold text-4xl holographic bg-clip-text text-transparent">FutureShop</span>
                     </div>
-                    <div className="flex items-center space-x-6">
-                      <div className="w-10 h-10 rounded-2xl backdrop-blur border border-white/30 flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer"
-                           style={{ background: `hsla(var(--evolution-perfect), 0.2)` }}>
-                        <div className="w-4 h-4 rounded bg-white/60" />
+                    
+                    <div className="flex items-center space-x-8">
+                      <div className="w-12 h-12 rounded-3xl backdrop-blur border border-white/40 flex items-center justify-center hover:scale-125 transition-transform duration-500 cursor-pointer"
+                           style={{ background: `hsla(var(--evolution-perfect), 0.3)` }}>
+                        <div className="w-5 h-5 rounded bg-white/70" />
                       </div>
-                      <div className="w-10 h-10 rounded-2xl backdrop-blur border border-white/30 flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer"
-                           style={{ background: `hsla(var(--evolution-ethereal), 0.2)` }}>
-                        <div className="w-4 h-4 rounded bg-white/60" />
+                      <div className="w-12 h-12 rounded-3xl backdrop-blur border border-white/40 flex items-center justify-center hover:scale-125 transition-transform duration-500 cursor-pointer"
+                           style={{ background: `hsla(var(--evolution-ethereal), 0.3)` }}>
+                        <div className="w-5 h-5 rounded bg-white/70" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Perfect product showcase */}
-                  <div className="space-y-8">
+                  {/* Transcendent product universe */}
+                  <div className="space-y-12">
                     <div className="text-center">
-                      <h4 className="text-3xl font-bold bg-gradient-to-r from-white via-blue-100 to-indigo-100 bg-clip-text text-transparent mb-3">
+                      <h4 className="text-5xl font-bold holographic bg-clip-text text-transparent mb-4">
                         Holographic Display Pro
                       </h4>
-                      <p className="text-white/70 text-lg">Experience the future of visual technology</p>
+                      <p className="text-white/80 text-2xl">Experience the future of visual technology</p>
                     </div>
 
-                    {/* Interactive product card - The pinnacle */}
-                    <div className="rounded-3xl p-8 backdrop-blur border transition-all duration-700 cursor-pointer group relative overflow-hidden"
+                    {/* The Ultimate Product Showcase */}
+                    <div className="rounded-3xl p-12 backdrop-blur border transition-all duration-1000 cursor-pointer group relative overflow-hidden"
                          style={{ 
-                           background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.3), hsla(var(--evolution-ethereal), 0.2))`,
-                           borderColor: `hsl(var(--evolution-perfect) / 0.4)`,
-                           boxShadow: `0 20px 60px hsla(var(--evolution-perfect), 0.3)`
+                           background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.4), hsla(var(--evolution-ethereal), 0.3))`,
+                           borderColor: `hsl(var(--evolution-perfect) / 0.5)`,
+                           boxShadow: `0 25px 70px hsla(var(--evolution-perfect), 0.5)`
                          }}>
                       
-                      {/* Product visualization */}
-                      <div className="w-full h-40 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 relative overflow-hidden"
+                      {/* Product hologram */}
+                      <div className="w-full h-48 rounded-3xl mb-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-1000 relative overflow-hidden"
                            style={{ 
-                             background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.4), hsla(var(--evolution-ethereal), 0.3))`,
-                             boxShadow: `inset 0 0 40px hsla(var(--evolution-perfect), 0.4)`
+                             background: `linear-gradient(135deg, hsla(var(--evolution-perfect), 0.5), hsla(var(--evolution-ethereal), 0.4))`,
+                             boxShadow: `inset 0 0 50px hsla(var(--evolution-perfect), 0.5)`
                            }}>
-                        <div className="w-20 h-20 rounded-2xl backdrop-blur animate-pulse relative"
+                        <div className="w-28 h-28 rounded-3xl backdrop-blur animate-pulse relative"
                              style={{ 
-                               background: `hsla(var(--evolution-ethereal), 0.6)`,
-                               boxShadow: `0 0 30px hsl(var(--evolution-perfect))`
+                               background: `hsla(var(--evolution-ethereal), 0.7)`,
+                               boxShadow: `0 0 40px hsl(var(--evolution-perfect))`
                              }}>
-                          <div className="absolute inset-2 rounded-xl"
-                               style={{ background: `linear-gradient(45deg, hsla(var(--evolution-perfect), 0.8), hsla(var(--evolution-ethereal), 0.6))` }} />
+                          <div className="absolute inset-4 rounded-2xl holographic" />
                         </div>
                         
-                        {/* Floating UI elements */}
-                        <div className="absolute top-4 right-4 w-8 h-8 rounded-lg backdrop-blur border border-white/40 animate-bounce"
+                        {/* Floating holographic elements */}
+                        <div className="absolute top-6 right-6 w-10 h-10 rounded-2xl backdrop-blur border border-white/50 animate-bounce"
                              style={{ animationDelay: '0.5s' }} />
-                        <div className="absolute bottom-4 left-4 w-6 h-6 rounded-full backdrop-blur border border-white/40 animate-bounce"
+                        <div className="absolute bottom-6 left-6 w-8 h-8 rounded-full backdrop-blur border border-white/50 animate-bounce"
                              style={{ animationDelay: '1s' }} />
+                        <div className="absolute top-1/2 right-1/4 w-6 h-6 rounded-lg backdrop-blur border border-white/50 animate-bounce"
+                             style={{ animationDelay: '1.5s' }} />
                       </div>
                       
                       <div className="flex justify-between items-center">
                         <div>
-                          <div className="text-white font-bold text-xl">$2,999</div>
-                          <div className="text-white/60">Free quantum shipping</div>
+                          <div className="text-white font-bold text-3xl">$2,999</div>
+                          <div className="text-white/70 text-lg">Free quantum shipping</div>
                         </div>
-                        <button className="px-8 py-4 rounded-2xl font-bold transition-all duration-500 transform hover:scale-110 relative overflow-hidden group/btn text-lg"
+                        <button className="px-12 py-6 rounded-3xl font-bold transition-all duration-700 transform hover:scale-115 relative overflow-hidden group/btn text-xl"
                                 style={{ 
                                   background: `linear-gradient(135deg, hsl(var(--evolution-perfect)), hsl(var(--evolution-ethereal)))`,
                                   color: 'white',
-                                  boxShadow: `0 10px 30px hsla(var(--evolution-perfect), 0.5)`
+                                  boxShadow: `0 15px 40px hsla(var(--evolution-perfect), 0.6)`
                                 }}>
                           <span className="relative z-10">Add to Cart</span>
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -translate-x-full group-hover/btn:translate-x-full transition-transform duration-800" />
                         </button>
                       </div>
 
-                      {/* Card ambient effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                      {/* Ultimate card effects */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
                     </div>
 
-                    {/* Perfect trust indicators */}
-                    <div className="flex justify-center space-x-8 text-sm text-white/70">
-                      <span className="flex items-center space-x-2">
-                        <div className="w-4 h-4 rounded-full" style={{ background: `hsl(var(--evolution-perfect))` }} />
+                    {/* Transcendent trust matrix */}
+                    <div className="flex justify-center space-x-12 text-lg text-white/80">
+                      <span className="flex items-center space-x-3">
+                        <div className="w-5 h-5 rounded-full holographic" />
                         <span>Quantum Secure</span>
                       </span>
-                      <span className="flex items-center space-x-2">
-                        <div className="w-4 h-4 rounded-full" style={{ background: `hsl(var(--evolution-ethereal))` }} />
+                      <span className="flex items-center space-x-3">
+                        <div className="w-5 h-5 rounded-full" style={{ background: `hsl(var(--evolution-ethereal))` }} />
                         <span>AI Optimized</span>
                       </span>
-                      <span className="flex items-center space-x-2">
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400" />
+                      <span className="flex items-center space-x-3">
+                        <div className="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-300 to-orange-300" />
                         <span>Perfect 5.0</span>
                       </span>
                     </div>
@@ -280,8 +298,8 @@ export const IterationPerfect = () => {
               </div>
             </div>
 
-            <div className="mt-10 text-center text-lg text-white/80 font-light">
-              Where imagination transcends into digital reality
+            <div className="mt-12 text-center text-2xl text-white/85 font-light italic">
+              "Where imagination transcends into digital reality"
             </div>
           </div>
         </div>
