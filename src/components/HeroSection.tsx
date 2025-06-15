@@ -24,7 +24,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Animated Background Elements */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-loom-primary/5 rounded-full animate-float" />
@@ -38,34 +38,38 @@ export const HeroSection = () => {
         />
       </div>
 
-      <div className={`relative z-10 text-center max-w-4xl mx-auto px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-loom-primary to-loom-secondary bg-clip-text text-transparent leading-tight">
+      {/* Main Content */}
+      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 flex-1 flex flex-col items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <h1 className="text-8xl md:text-9xl lg:text-[10rem] font-black mb-8 bg-gradient-to-r from-gray-900 via-loom-primary to-loom-secondary bg-clip-text text-transparent leading-none tracking-tight">
           Loom
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+        <p className="text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-16 leading-relaxed font-medium max-w-4xl">
           Where AI weaves your words into visual masterpieces
         </p>
 
-        <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-500 mb-20 max-w-3xl mx-auto leading-relaxed">
           Journey through the evolution of AI-powered design. From simple concepts to stunning interfaces, 
           watch as each iteration brings us closer to the perfect synthesis of human creativity and artificial intelligence.
         </p>
+      </div>
 
-        <div className="space-y-4">
-          <div className="inline-block px-8 py-4 bg-white rounded-lg shadow-lg border border-gray-200">
-            <code className="text-sm text-gray-700 font-mono">
+      {/* Code Demo Section - Positioned Lower */}
+      <div className={`relative z-10 text-center px-6 pb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="space-y-6">
+          <div className="inline-block px-10 py-6 bg-white rounded-xl shadow-lg border border-gray-200 backdrop-blur-sm">
+            <code className="text-base md:text-lg text-gray-700 font-mono font-medium">
               "{typewriterText}"
               <span className="animate-blink border-r-2 border-gray-700 ml-1"></span>
             </code>
           </div>
-          <div className="text-sm text-gray-500 animate-bounce">
+          <div className="text-base text-gray-500 animate-bounce font-medium">
             ↓ Watch the magic unfold
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - At the very bottom */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse" />
