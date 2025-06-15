@@ -26,20 +26,21 @@ export const HeroSection = () => {
           Where AI weaves your words into visual masterpieces
         </p>
 
-        <p className="text-lg text-gray-500 mb-20 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
           Journey through the evolution of AI-powered design. From simple concepts to stunning interfaces, 
           watch as each iteration brings us closer to the perfect synthesis of human creativity and artificial intelligence.
         </p>
 
-        <div className="space-y-6">
+        <div className="space-y-4 mb-16">
           <div className="inline-block px-8 py-4 bg-white rounded-lg shadow-lg border border-gray-200">
             <code className="text-sm text-gray-700 font-mono">
               "Create a modern landing page with smooth animations"
             </code>
           </div>
-          <div className="text-sm text-gray-500">
-            ↓ Watch the magic unfold
-          </div>
+        </div>
+
+        <div className="text-sm text-gray-500">
+          ↓ Watch the magic unfold
         </div>
       </div>
 
