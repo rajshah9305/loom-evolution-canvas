@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
@@ -61,10 +60,10 @@ export const HeroSection = () => {
         {particles}
       </div>
 
-      {/* Main Content Container - Repositioned for central focus */}
-      <div className={`relative z-10 text-center max-w-6xl mx-auto px-8 flex-1 flex flex-col justify-center items-center pt-16 transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        {/* Main Title - Lowered and more centered */}
-        <div className="mb-8">
+      {/* Main Content Container - Adjusted for better spacing */}
+      <div className={`relative z-10 text-center max-w-6xl mx-auto px-8 flex-1 flex flex-col justify-center items-center transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        {/* Main Title - Repositioned slightly higher for better balance */}
+        <div className="mb-6 -mt-8">
           <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold leading-[0.8] tracking-[-0.03em]">
             <span className="text-gradient-primary drop-shadow-sm">
               Loom
@@ -72,23 +71,23 @@ export const HeroSection = () => {
           </h1>
         </div>
         
-        {/* Enhanced Subtitle - Positioned closer to title */}
-        <div className={`transition-all duration-1200 delay-200 ease-out mb-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        {/* Enhanced Subtitle - Maintained close positioning to title */}
+        <div className={`transition-all duration-1200 delay-200 ease-out mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-semibold leading-relaxed tracking-[-0.015em]">
             Where AI weaves your words into visual masterpieces
           </p>
         </div>
 
-        {/* Enhanced Description - Spaced appropriately */}
-        <div className={`transition-all duration-1200 delay-400 ease-out mb-20 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        {/* Enhanced Description - Slightly reduced bottom margin */}
+        <div className={`transition-all duration-1200 delay-400 ease-out mb-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <p className="text-lg md:text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
             Journey through the evolution of AI-powered design. From simple concepts to stunning interfaces, 
             watch as each iteration brings us closer to perfect synthesis.
           </p>
         </div>
 
-        {/* Enhanced Code Block */}
-        <div className={`transition-all duration-1200 delay-600 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-98'}`}>
+        {/* Enhanced Code Block - Reduced bottom margin to make room for scroll indicator */}
+        <div className={`transition-all duration-1200 delay-600 ease-out mb-16 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-98'}`}>
           <div className="inline-block px-10 py-6 glass-effect rounded-3xl shadow-2xl border border-slate-200/50 hover-lift-subtle group">
             <code className="text-base md:text-lg lg:text-xl text-slate-800 font-mono font-semibold tracking-wide group-hover:text-slate-900 transition-colors duration-300">
               "Create a modern landing page with smooth animations"
@@ -97,19 +96,19 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator Section - Positioned at bottom */}
-      <div className={`relative z-10 flex flex-col items-center space-y-8 pb-16 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        {/* Scroll Text with Darker Styling */}
-        <div className="text-base text-slate-600 font-semibold flex items-center justify-center space-x-6 tracking-wide">
-          <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
-          <span className="px-3">Scroll to explore</span>
-          <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
+      {/* Enhanced Scroll Indicator Section - Moved lower and increased spacing */}
+      <div className={`relative z-10 flex flex-col items-center space-y-10 pb-20 pt-8 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* Scroll Text with Enhanced Styling */}
+        <div className="text-base text-slate-700 font-semibold flex items-center justify-center space-x-6 tracking-wide">
+          <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
+          <span className="px-4">Scroll to explore</span>
+          <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
         </div>
         
-        {/* Enhanced Mouse Icon - Darker */}
+        {/* Enhanced Mouse Icon - Darker and more prominent */}
         <div className="animate-bounce-slow">
-          <div className="w-7 h-12 border-[3px] border-slate-500 rounded-full flex justify-center relative group hover:border-slate-600 transition-colors duration-300">
-            <div className="w-1 h-4 bg-slate-600 rounded-full mt-3 animate-pulse group-hover:bg-slate-700 transition-colors duration-300" />
+          <div className="w-8 h-14 border-[3px] border-slate-600 rounded-full flex justify-center relative group hover:border-slate-700 transition-colors duration-300 shadow-sm">
+            <div className="w-1.5 h-5 bg-slate-700 rounded-full mt-3 animate-pulse group-hover:bg-slate-800 transition-colors duration-300" />
           </div>
         </div>
       </div>
