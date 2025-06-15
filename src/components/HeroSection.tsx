@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react";
-import { MousePointer } from "lucide-react";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +9,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-loom-primary/5 rounded-full animate-float" />
@@ -18,8 +17,7 @@ export const HeroSection = () => {
         <div className="absolute top-1/2 right-1/3 w-32 h-32 bg-loom-accent/5 rounded-full animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      {/* Main Content - Centered */}
-      <div className={`relative z-10 text-center max-w-4xl mx-auto px-6 flex-1 flex flex-col justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className={`relative z-10 text-center max-w-4xl mx-auto px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-loom-primary to-loom-secondary bg-clip-text text-transparent leading-tight">
           Loom
         </h1>
@@ -40,17 +38,16 @@ export const HeroSection = () => {
             </code>
           </div>
         </div>
+
+        <div className="text-sm text-gray-500">
+          ↓ Watch the magic unfold
+        </div>
       </div>
 
-      {/* Watch the magic unfold - Positioned at bottom with mouse pointer */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-4">
-        <div className="text-sm text-gray-500 animate-fade-in" style={{ animationDelay: '2s' }}>
-          Watch the magic unfold
-        </div>
-        
-        {/* Mouse Pointer Animation */}
-        <div className="animate-bounce">
-          <MousePointer className="w-6 h-6 text-gray-400 animate-pulse" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>
