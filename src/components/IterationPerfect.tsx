@@ -21,7 +21,11 @@ export const IterationPerfect = () => {
   }, []);
 
   return (
-    <section id="perfect" className="min-h-screen flex items-center gradient-loom-perfect relative overflow-hidden">
+    <section id="perfect" className="min-h-screen flex items-center relative overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #1e40af 50%, #1d4ed8 75%, #2563eb 100%)',
+      backgroundSize: '400% 400%',
+      animation: 'gradient-shift 8s ease-in-out infinite'
+    }}>
       {/* Floating orbs */}
       <div className="absolute inset-0">
         {Array.from({ length: 12 }).map((_, i) => (
@@ -50,7 +54,7 @@ export const IterationPerfect = () => {
               <h2 className="text-4xl md:text-6xl font-bold text-white text-shadow leading-tight">
                 Your Vision,
                 <br />
-                <span className="bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
                   Perfectly Woven
                 </span>
               </h2>
@@ -70,14 +74,14 @@ export const IterationPerfect = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-white/80">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-                    <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
                   </div>
                   <span>Crafting digital poetry...</span>
                 </div>
 
-                <button className="mt-8 px-8 py-4 bg-white text-purple-600 font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-white hover:to-blue-50">
+                <button className="mt-8 px-8 py-4 bg-white text-blue-600 font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-white hover:to-blue-50">
                   Experience Loom for Yourself
                 </button>
               </div>
@@ -87,13 +91,13 @@ export const IterationPerfect = () => {
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             {/* Perfect UI Demo */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-3xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-3xl blur-xl" />
               <div className="relative glass-effect p-8 rounded-3xl shadow-2xl border border-white/30">
                 <div className="space-y-8">
                   {/* Futuristic header */}
                   <div className="flex justify-between items-center pb-6 border-b border-white/20">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 rounded-lg animate-gradient-shift" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 rounded-lg animate-gradient-shift" />
                       <span className="text-white font-bold text-lg">FutureShop</span>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -105,7 +109,7 @@ export const IterationPerfect = () => {
                   {/* Product showcase */}
                   <div className="space-y-6">
                     <div className="text-center">
-                      <h4 className="text-2xl font-bold bg-gradient-to-r from-white via-yellow-200 to-cyan-200 bg-clip-text text-transparent mb-2">
+                      <h4 className="text-2xl font-bold bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent mb-2">
                         Holographic Display Pro
                       </h4>
                       <p className="text-white/70 text-sm">Experience the future of visual technology</p>
@@ -113,7 +117,7 @@ export const IterationPerfect = () => {
 
                     {/* Interactive product card */}
                     <div className="bg-gradient-to-br from-white/20 to-white/5 rounded-2xl p-6 backdrop-blur border border-white/20 hover:from-white/30 hover:to-white/10 transition-all duration-500 cursor-pointer group">
-                      <div className="w-full h-32 bg-gradient-to-br from-cyan-400/30 to-purple-400/30 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <div className="w-full h-32 bg-gradient-to-br from-cyan-400/30 to-blue-400/30 rounded-xl mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                         <div className="w-16 h-16 bg-white/30 rounded-lg backdrop-blur animate-pulse" />
                       </div>
                       
@@ -122,7 +126,7 @@ export const IterationPerfect = () => {
                           <div className="text-white font-semibold">$2,999</div>
                           <div className="text-white/60 text-sm">Free shipping</div>
                         </div>
-                        <button className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-pink-400 text-black font-medium rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        <button className="px-4 py-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                           Add to Cart
                         </button>
                       </div>
