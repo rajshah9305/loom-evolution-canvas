@@ -31,15 +31,18 @@ export const HeroSection = () => {
           watch as each iteration brings us closer to the perfect synthesis of human creativity and artificial intelligence.
         </p>
 
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-24">
           <div className="inline-block px-8 py-4 bg-white rounded-lg shadow-lg border border-gray-200">
             <code className="text-sm text-gray-700 font-mono">
               "Create a modern landing page with smooth animations"
             </code>
           </div>
         </div>
+      </div>
 
-        <div className="text-sm text-gray-500">
+      {/* Watch the magic unfold text positioned closer to scroll indicator */}
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="text-sm text-gray-500 mb-2">
           ↓ Watch the magic unfold
         </div>
       </div>
