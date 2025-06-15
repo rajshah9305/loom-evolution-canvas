@@ -1,36 +1,29 @@
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export const IterationRefine = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
         }
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const element = document.getElementById('refine');
+    if (element) observer.observe(element);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section 
-      ref={sectionRef}
-      id="refine" 
-      className="min-h-screen flex items-center gradient-loom-refine relative overflow-hidden"
-    >
+    <section id="refine" className="min-h-screen flex items-center gradient-loom-refine relative overflow-hidden">
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-20" aria-hidden="true">
+      <div className="absolute inset-0 opacity-20">
         <div 
           className="w-full h-full"
           style={{
@@ -82,15 +75,15 @@ export const IterationRefine = () => {
                     <span className="text-white text-xs font-bold">LOGO</span>
                   </div>
                   <div className="flex space-x-3">
-                    {['Home', 'About', 'Contact'].map((item, index) => (
-                      <button 
-                        key={item}
-                        className="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded text-sm transition-colors"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        {item}
-                      </button>
-                    ))}
+                    <button className="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded text-sm transition-colors">
+                      Home
+                    </button>
+                    <button className="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded text-sm transition-colors">
+                      About
+                    </button>
+                    <button className="px-3 py-1 text-blue-600 hover:bg-blue-50 rounded text-sm transition-colors">
+                      Contact
+                    </button>
                   </div>
                 </div>
 
@@ -98,7 +91,7 @@ export const IterationRefine = () => {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold text-gray-800">Welcome to Our App</h3>
                   <p className="text-gray-600">Experience the future of design automation with our AI-powered platform.</p>
-                  <button className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transform hover:scale-105 transition-all duration-200 animate-pulse-glow">
+                  <button className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-200 animate-pulse-glow">
                     Get Started
                   </button>
                 </div>

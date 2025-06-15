@@ -1,36 +1,29 @@
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export const IterationPerfect = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
         }
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const element = document.getElementById('perfect');
+    if (element) observer.observe(element);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section 
-      ref={sectionRef}
-      id="perfect" 
-      className="min-h-screen flex items-center gradient-loom-perfect relative overflow-hidden"
-    >
+    <section id="perfect" className="min-h-screen flex items-center gradient-loom-perfect relative overflow-hidden">
       {/* Floating orbs */}
-      <div className="absolute inset-0" aria-hidden="true">
+      <div className="absolute inset-0">
         {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
@@ -104,8 +97,8 @@ export const IterationPerfect = () => {
                       <span className="text-white font-bold text-lg">FutureShop</span>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <div className="w-8 h-8 bg-white/20 rounded-full backdrop-blur border border-white/30 hover:bg-white/30 transition-colors cursor-pointer" />
-                      <div className="w-8 h-8 bg-white/20 rounded-full backdrop-blur border border-white/30 hover:bg-white/30 transition-colors cursor-pointer" />
+                      <div className="w-8 h-8 bg-white/20 rounded-full backdrop-blur border border-white/30" />
+                      <div className="w-8 h-8 bg-white/20 rounded-full backdrop-blur border border-white/30" />
                     </div>
                   </div>
 
