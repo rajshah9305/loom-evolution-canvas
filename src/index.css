@@ -38,47 +38,44 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Continuous Evolution Color Palette */
+    --evolution-foundation: 240 8% 10%;
+    --evolution-shadow: 238 15% 18%;
+    --evolution-depth: 236 20% 26%;
+    --evolution-accent: 234 25% 34%;
+    --evolution-refined: 232 30% 42%;
+    --evolution-enhanced: 230 35% 50%;
+    --evolution-sophisticated: 228 40% 58%;
+    --evolution-perfect: 226 45% 66%;
+    --evolution-light: 224 50% 74%;
+    --evolution-ethereal: 222 55% 82%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -108,31 +105,96 @@
 }
 
 @layer utilities {
-  .gradient-loom-basic {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  /* Evolution-based gradients */
+  .gradient-evolution-basic {
+    background: linear-gradient(135deg, 
+      hsl(var(--evolution-foundation)) 0%, 
+      hsl(var(--evolution-shadow)) 20%,
+      #f8f9fa 100%);
   }
 
-  .gradient-loom-refine {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 30%, #bbdefb 70%, #90caf9 100%);
+  .gradient-evolution-refine {
+    background: linear-gradient(135deg, 
+      hsl(var(--evolution-shadow)) 0%, 
+      hsl(var(--evolution-depth)) 15%,
+      hsl(var(--evolution-accent)) 35%,
+      #e3f2fd 100%);
   }
 
-  .gradient-loom-enhance {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #90caf9 50%, #64b5f6 75%, #42a5f5 100%);
+  .gradient-evolution-enhance {
+    background: linear-gradient(135deg, 
+      hsl(var(--evolution-depth)) 0%, 
+      hsl(var(--evolution-accent)) 20%,
+      hsl(var(--evolution-refined)) 40%,
+      hsl(var(--evolution-enhanced)) 60%,
+      hsl(var(--evolution-sophisticated)) 100%);
   }
 
-  .gradient-loom-perfect {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  .gradient-evolution-perfect {
+    background: linear-gradient(135deg, 
+      hsl(var(--evolution-enhanced)) 0%, 
+      hsl(var(--evolution-sophisticated)) 20%,
+      hsl(var(--evolution-perfect)) 40%,
+      hsl(var(--evolution-light)) 60%,
+      hsl(var(--evolution-ethereal)) 100%);
     background-size: 400% 400%;
-    animation: gradient-shift 8s ease-in-out infinite;
+    animation: gradient-evolution-flow 12s ease-in-out infinite;
   }
 
-  .glass-effect {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .glass-evolution {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .text-shadow-evolution {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
+
+  .particle-field::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    animation: particle-drift 20s linear infinite;
+  }
+}
+
+@keyframes gradient-evolution-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-10px) translateX(5px); }
+  66% { transform: translateY(5px) translateX(-3px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes wireframe-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes evolution-glow {
+  0%, 100% { box-shadow: 0 0 20px hsla(var(--evolution-accent), 0.3); }
+  50% { box-shadow: 0 0 40px hsla(var(--evolution-refined), 0.6); }
+}
+
+@keyframes sophisticated-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(2deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes perfect-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
