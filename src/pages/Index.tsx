@@ -9,17 +9,41 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const currentProgress = window.pageYOffset / totalScroll;
       setScrollProgress(currentProgress);
+
+      // Check which section is in view
+      const sections = ['basic', 'refine', 'enhance', 'perfect'];
+      const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -38,10 +62,24 @@ const Index = () => {
             Loom
           </div>
           <div className="hidden md:flex space-x-4 text-sm">
-            <a href="#basic" className="hover:text-loom-primary transition-colors">Basic</a>
-            <a href="#refine" className="hover:text-loom-primary transition-colors">Refine</a>
-            <a href="#enhance" className="hover:text-loom-primary transition-colors">Enhance</a>
-            <a href="#perfect" className="hover:text-loom-primary transition-colors">Perfect</a>
+            {[
+              { id: 'basic', label: 'Basic' },
+              { id: 'refine', label: 'Refine' },
+              { id: 'enhance', label: 'Enhance' },
+              { id: 'perfect', label: 'Perfect' }
+            ].map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => handleNavClick(id)}
+                className={`px-3 py-1 rounded-full transition-all duration-300 ${
+                  activeSection === id
+                    ? 'bg-loom-primary text-white shadow-lg'
+                    : 'hover:text-loom-primary hover:bg-loom-primary/10'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </div>
       </nav>
