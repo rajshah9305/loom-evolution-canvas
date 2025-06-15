@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
@@ -100,8 +99,8 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator Section - Moved much further down for better separation */}
-      <div className={`relative z-10 flex flex-col items-center space-y-6 pb-48 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      {/* Enhanced Scroll Indicator Section - Moved significantly lower */}
+      <div className={`relative z-10 flex flex-col items-center space-y-6 pb-32 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Scroll Text with improved spacing */}
         <div className="text-base text-slate-600 font-semibold flex items-center justify-center space-x-6 tracking-wide mb-2">
           <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
