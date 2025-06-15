@@ -61,33 +61,35 @@ export const HeroSection = () => {
         {particles}
       </div>
 
-      {/* Main Content Container - Enhanced as center attraction */}
-      <div className={`relative z-10 text-center max-w-6xl mx-auto px-8 flex-1 flex flex-col justify-center transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        {/* Main Title with Enhanced Typography - Larger and more prominent */}
-        <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold mb-12 leading-[0.8] tracking-[-0.03em]">
-          <span className="text-gradient-primary drop-shadow-sm">
-            Loom
-          </span>
-        </h1>
+      {/* Main Content Container - Repositioned for central focus */}
+      <div className={`relative z-10 text-center max-w-6xl mx-auto px-8 flex-1 flex flex-col justify-center items-center pt-16 transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        {/* Main Title - Lowered and more centered */}
+        <div className="mb-8">
+          <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold leading-[0.8] tracking-[-0.03em]">
+            <span className="text-gradient-primary drop-shadow-sm">
+              Loom
+            </span>
+          </h1>
+        </div>
         
-        {/* Enhanced Subtitle - More prominent */}
-        <div className={`transition-all duration-1200 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 mb-10 font-semibold leading-relaxed tracking-[-0.015em]">
+        {/* Enhanced Subtitle - Positioned closer to title */}
+        <div className={`transition-all duration-1200 delay-200 ease-out mb-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-semibold leading-relaxed tracking-[-0.015em]">
             Where AI weaves your words into visual masterpieces
           </p>
         </div>
 
-        {/* Enhanced Description - Larger and more readable */}
-        <div className={`transition-all duration-1200 delay-400 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-lg md:text-xl lg:text-2xl text-slate-600 mb-20 max-w-4xl mx-auto leading-relaxed font-medium">
+        {/* Enhanced Description - Spaced appropriately */}
+        <div className={`transition-all duration-1200 delay-400 ease-out mb-20 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium">
             Journey through the evolution of AI-powered design. From simple concepts to stunning interfaces, 
             watch as each iteration brings us closer to perfect synthesis.
           </p>
         </div>
 
-        {/* Enhanced Code Block - More prominent */}
+        {/* Enhanced Code Block */}
         <div className={`transition-all duration-1200 delay-600 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-98'}`}>
-          <div className="inline-block px-10 py-6 glass-effect rounded-3xl shadow-2xl border border-slate-200/50 mb-24 hover-lift-subtle group">
+          <div className="inline-block px-10 py-6 glass-effect rounded-3xl shadow-2xl border border-slate-200/50 hover-lift-subtle group">
             <code className="text-base md:text-lg lg:text-xl text-slate-800 font-mono font-semibold tracking-wide group-hover:text-slate-900 transition-colors duration-300">
               "Create a modern landing page with smooth animations"
             </code>
@@ -95,7 +97,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator Section - Darkened as requested */}
+      {/* Enhanced Scroll Indicator Section - Positioned at bottom */}
       <div className={`relative z-10 flex flex-col items-center space-y-8 pb-16 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Scroll Text with Darker Styling */}
         <div className="text-base text-slate-600 font-semibold flex items-center justify-center space-x-6 tracking-wide">
