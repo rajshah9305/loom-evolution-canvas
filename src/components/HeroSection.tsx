@@ -99,8 +99,8 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator Section - Repositioned lower for premium aesthetic */}
-      <div className={`relative z-10 flex flex-col items-center space-y-6 pb-24 mb-12 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      {/* Enhanced Scroll Indicator Section - Positioned much lower for premium aesthetic */}
+      <div className={`relative z-10 flex flex-col items-center space-y-6 pb-32 mb-16 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Scroll Text with improved spacing */}
         <div className="text-base text-slate-600 font-semibold flex items-center justify-center space-x-6 tracking-wide mb-2">
           <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
