@@ -82,7 +82,7 @@ export const IterationPerfect = () => {
             <div className="space-y-4 p-6 glass-morph rounded-xl border border-slate-200/30 shadow-sm">
               <div className="text-xs text-slate-500 font-mono uppercase tracking-wider">Visionary Input</div>
               <div className="bg-white p-4 rounded-lg border border-slate-200 font-mono text-sm shadow-sm">
-                "design a futuristic e-commerce experience that evokes wonder"
+                "design a creative workspace that inspires innovation"
               </div>
               <div className="flex items-center space-x-3 text-xs text-slate-500">
                 <div className="flex space-x-1">
@@ -99,18 +99,18 @@ export const IterationPerfect = () => {
           </div>
 
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            {/* Perfect UI Demo - The Masterpiece */}
+            {/* Creative Workspace Demo - The Masterpiece */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-slate-500/5 to-indigo-500/10 rounded-2xl blur-xl" />
               <div className="relative glass-morph p-8 rounded-2xl shadow-2xl border border-slate-200/50 hover-lift-subtle">
                 <div className="space-y-8">
-                  {/* Futuristic header */}
+                  {/* Creative workspace header */}
                   <div className="flex justify-between items-center pb-6 border-b border-slate-200/50">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-slate-600 to-indigo-400 rounded-xl shadow-lg relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
                       </div>
-                      <span className="text-slate-800 font-bold text-xl tracking-tight">FutureShop</span>
+                      <span className="text-slate-800 font-bold text-xl tracking-tight">Loom Studio</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       {[1, 2].map((i) => (
@@ -121,37 +121,41 @@ export const IterationPerfect = () => {
                     </div>
                   </div>
 
-                  {/* Futuristic product showcase */}
+                  {/* Creative project showcase */}
                   <div className="space-y-6">
                     <div className="text-center">
                       <h4 className="text-xl font-bold text-slate-800 mb-1 tracking-tight">
-                        Holographic Display Pro
+                        Brand Identity Suite
                       </h4>
-                      <p className="text-slate-500 text-sm">Experience the future of visual technology</p>
+                      <p className="text-slate-500 text-sm">AI-crafted visual ecosystem</p>
                     </div>
 
-                    {/* Product card */}
+                    {/* Project preview */}
                     <div className="glass-morph rounded-2xl p-6 border border-slate-200/30 hover:border-slate-300/50 transition-all duration-300 cursor-pointer group relative overflow-hidden">
                       <div className="w-full h-32 rounded-xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50">
-                        <div className="w-16 h-16 glass-effect rounded-xl flex items-center justify-center relative">
-                          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-slate-600 rounded-lg" />
+                        <div className="grid grid-cols-3 gap-2">
+                          {[1, 2, 3].map((i) => (
+                            <div key={i} className="w-12 h-12 glass-effect rounded-lg flex items-center justify-center relative">
+                              <div className={`w-6 h-6 rounded ${i === 1 ? 'bg-gradient-to-br from-indigo-500 to-slate-600' : i === 2 ? 'bg-gradient-to-br from-slate-600 to-indigo-500' : 'bg-gradient-to-br from-indigo-400 to-slate-500'}`} />
+                            </div>
+                          ))}
                         </div>
                       </div>
                       
                       <div className="flex justify-between items-center">
                         <div>
-                          <div className="text-slate-800 font-bold text-lg">$2,999</div>
-                          <div className="text-slate-500 text-sm">Free shipping • 5.0 ★</div>
+                          <div className="text-slate-800 font-bold text-lg">Complete</div>
+                          <div className="text-slate-500 text-sm">Logo • Colors • Typography</div>
                         </div>
                         <button className="btn-primary hover:scale-105 transition-transform duration-200">
-                          Add to Cart
+                          Export
                         </button>
                       </div>
                     </div>
 
-                    {/* Trust indicators */}
+                    {/* Creative process indicators */}
                     <div className="flex justify-center space-x-6 text-xs text-slate-500">
-                      {['🔒 Secure', '⚡ Fast', '🌟 Rated'].map((item, i) => (
+                      {['🎨 Creative', '⚡ Instant', '🔄 Iterative'].map((item, i) => (
                         <span key={item} className="hover:text-slate-700 transition-colors duration-200 cursor-pointer">
                           {item}
                         </span>
