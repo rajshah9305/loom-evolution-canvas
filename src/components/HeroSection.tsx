@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { MousePointerClick } from "lucide-react";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,17 +41,37 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Watch the magic unfold text positioned with better visual balance */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="text-sm text-gray-500 mb-3">
-          ↓ Watch the magic unfold
+      {/* Enhanced "Watch the magic unfold" section */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="group cursor-pointer">
+          {/* Floating background circle */}
+          <div className="absolute inset-0 w-32 h-16 bg-gradient-to-r from-loom-primary/10 to-loom-secondary/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse-glow" />
+          
+          {/* Main content */}
+          <div className="relative flex flex-col items-center space-y-3">
+            {/* Icon with enhanced styling */}
+            <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-lg border border-gray-200 group-hover:scale-110 transition-all duration-300">
+              <MousePointerClick className="w-5 h-5 text-loom-primary group-hover:text-loom-secondary transition-colors duration-300" />
+            </div>
+            
+            {/* Text with gradient and animation */}
+            <div className="bg-gradient-to-r from-loom-primary via-loom-secondary to-loom-accent bg-clip-text text-transparent font-medium text-sm tracking-wide group-hover:scale-105 transition-all duration-300">
+              ↓ Watch the magic unfold
+            </div>
+            
+            {/* Subtle shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 transform -skew-x-12" />
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-loom-primary/60 rounded-full flex justify-center relative overflow-hidden group cursor-pointer">
+          <div className="w-1 h-3 bg-gradient-to-b from-loom-primary to-loom-secondary rounded-full mt-2 animate-pulse" />
+          
+          {/* Glow effect on hover */}
+          <div className="absolute inset-0 rounded-full bg-loom-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       </div>
     </section>
