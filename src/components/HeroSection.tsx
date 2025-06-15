@@ -40,9 +40,9 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Watch the magic unfold text positioned closer to scroll indicator */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="text-sm text-gray-500 mb-2">
+      {/* Watch the magic unfold text positioned with better visual balance */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="text-sm text-gray-500 mb-3">
           ↓ Watch the magic unfold
         </div>
       </div>
