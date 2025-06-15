@@ -1,29 +1,36 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export const IterationEnhance = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.3 }
     );
 
-    const element = document.getElementById('enhance');
-    if (element) observer.observe(element);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="enhance" className="min-h-screen flex items-center gradient-loom-enhance relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="enhance" 
+      className="min-h-screen flex items-center gradient-loom-enhance relative overflow-hidden"
+    >
       {/* Dynamic background particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden="true">
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
@@ -80,10 +87,11 @@ export const IterationEnhance = () => {
                     <span className="text-white text-sm font-bold">LOOM</span>
                   </div>
                   <div className="flex space-x-4">
-                    {['Home', 'Features', 'Pricing', 'Contact'].map((item) => (
+                    {['Home', 'Features', 'Pricing', 'Contact'].map((item, index) => (
                       <button 
                         key={item}
                         className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm transition-all duration-300 backdrop-blur"
+                        style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         {item}
                       </button>
@@ -116,6 +124,7 @@ export const IterationEnhance = () => {
                     <div 
                       key={i}
                       className="h-16 bg-gradient-to-br from-white/20 to-white/5 rounded-lg backdrop-blur border border-white/20 hover:from-white/30 hover:to-white/10 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                      style={{ animationDelay: `${i * 0.1}s` }}
                     />
                   ))}
                 </div>

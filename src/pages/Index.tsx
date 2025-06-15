@@ -13,13 +13,22 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const currentProgress = window.pageYOffset / totalScroll;
-      setScrollProgress(currentProgress);
+      const currentProgress = totalScroll > 0 ? window.pageYOffset / totalScroll : 0;
+      setScrollProgress(Math.min(currentProgress, 1));
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -38,10 +47,30 @@ const Index = () => {
             Loom
           </div>
           <div className="hidden md:flex space-x-4 text-sm">
-            <a href="#basic" className="hover:text-loom-primary transition-colors">Basic</a>
-            <a href="#refine" className="hover:text-loom-primary transition-colors">Refine</a>
-            <a href="#enhance" className="hover:text-loom-primary transition-colors">Enhance</a>
-            <a href="#perfect" className="hover:text-loom-primary transition-colors">Perfect</a>
+            <button 
+              onClick={() => handleNavClick('basic')}
+              className="hover:text-loom-primary transition-colors cursor-pointer"
+            >
+              Basic
+            </button>
+            <button 
+              onClick={() => handleNavClick('refine')}
+              className="hover:text-loom-primary transition-colors cursor-pointer"
+            >
+              Refine
+            </button>
+            <button 
+              onClick={() => handleNavClick('enhance')}
+              className="hover:text-loom-primary transition-colors cursor-pointer"
+            >
+              Enhance
+            </button>
+            <button 
+              onClick={() => handleNavClick('perfect')}
+              className="hover:text-loom-primary transition-colors cursor-pointer"
+            >
+              Perfect
+            </button>
           </div>
         </div>
       </nav>
