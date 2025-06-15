@@ -61,53 +61,53 @@ export const HeroSection = () => {
         {particles}
       </div>
 
-      {/* Main Content Container */}
-      <div className={`relative z-10 text-center max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        {/* Main Title with Enhanced Typography */}
-        <h1 className="text-7xl md:text-9xl font-bold mb-8 leading-[0.85] tracking-[-0.02em]">
-          <span className="text-gradient-primary">
+      {/* Main Content Container - Enhanced as center attraction */}
+      <div className={`relative z-10 text-center max-w-6xl mx-auto px-8 flex-1 flex flex-col justify-center transition-all duration-1200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        {/* Main Title with Enhanced Typography - Larger and more prominent */}
+        <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold mb-12 leading-[0.8] tracking-[-0.03em]">
+          <span className="text-gradient-primary drop-shadow-sm">
             Loom
           </span>
         </h1>
         
-        {/* Refined Subtitle */}
+        {/* Enhanced Subtitle - More prominent */}
         <div className={`transition-all duration-1200 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-xl md:text-2xl text-slate-600 mb-6 font-medium leading-relaxed tracking-[-0.01em]">
+          <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 mb-10 font-semibold leading-relaxed tracking-[-0.015em]">
             Where AI weaves your words into visual masterpieces
           </p>
         </div>
 
-        {/* Enhanced Description */}
+        {/* Enhanced Description - Larger and more readable */}
         <div className={`transition-all duration-1200 delay-400 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-base md:text-lg text-slate-500 mb-16 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-lg md:text-xl lg:text-2xl text-slate-600 mb-20 max-w-4xl mx-auto leading-relaxed font-medium">
             Journey through the evolution of AI-powered design. From simple concepts to stunning interfaces, 
             watch as each iteration brings us closer to perfect synthesis.
           </p>
         </div>
 
-        {/* Refined Code Block */}
+        {/* Enhanced Code Block - More prominent */}
         <div className={`transition-all duration-1200 delay-600 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-98'}`}>
-          <div className="inline-block px-8 py-5 glass-effect rounded-2xl shadow-xl border border-slate-200/40 mb-20 hover-lift-subtle group">
-            <code className="text-sm md:text-base text-slate-700 font-mono font-medium tracking-wide group-hover:text-slate-800 transition-colors duration-300">
+          <div className="inline-block px-10 py-6 glass-effect rounded-3xl shadow-2xl border border-slate-200/50 mb-24 hover-lift-subtle group">
+            <code className="text-base md:text-lg lg:text-xl text-slate-800 font-mono font-semibold tracking-wide group-hover:text-slate-900 transition-colors duration-300">
               "Create a modern landing page with smooth animations"
             </code>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator Section */}
-      <div className={`relative z-10 flex flex-col items-center space-y-6 pb-12 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        {/* Scroll Text with Better Alignment */}
-        <div className="text-sm text-slate-400 font-medium flex items-center justify-center space-x-4 tracking-wide">
-          <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-          <span className="px-2">Scroll to explore</span>
-          <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+      {/* Enhanced Scroll Indicator Section - Darkened as requested */}
+      <div className={`relative z-10 flex flex-col items-center space-y-8 pb-16 transition-all duration-1200 delay-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        {/* Scroll Text with Darker Styling */}
+        <div className="text-base text-slate-600 font-semibold flex items-center justify-center space-x-6 tracking-wide">
+          <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
+          <span className="px-3">Scroll to explore</span>
+          <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
         </div>
         
-        {/* Enhanced Mouse Icon */}
+        {/* Enhanced Mouse Icon - Darker */}
         <div className="animate-bounce-slow">
-          <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center relative group hover:border-slate-400 transition-colors duration-300">
-            <div className="w-0.5 h-3 bg-slate-400 rounded-full mt-2.5 animate-pulse group-hover:bg-slate-500 transition-colors duration-300" />
+          <div className="w-7 h-12 border-[3px] border-slate-500 rounded-full flex justify-center relative group hover:border-slate-600 transition-colors duration-300">
+            <div className="w-1 h-4 bg-slate-600 rounded-full mt-3 animate-pulse group-hover:bg-slate-700 transition-colors duration-300" />
           </div>
         </div>
       </div>
