@@ -109,137 +109,30 @@
 
 @layer utilities {
   .gradient-loom-basic {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 30%, #dee2e6 70%, #ced4da 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .gradient-loom-basic::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    animation: shimmer 3s infinite;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
   }
 
   .gradient-loom-refine {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #90caf9 50%, #64b5f6 75%, #42a5f5 100%);
-    background-size: 300% 300%;
-    animation: gradient-wave 6s ease-in-out infinite;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 30%, #bbdefb 70%, #90caf9 100%);
   }
 
   .gradient-loom-enhance {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #84fab0 50%, #8fd3f4 75%, #42a5f5 100%);
-    background-size: 400% 400%;
-    animation: gradient-flow 8s ease-in-out infinite;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #90caf9 50%, #64b5f6 75%, #42a5f5 100%);
   }
 
   .gradient-loom-perfect {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 15%, #f093fb 30%, #f5576c 45%, #4facfe 60%, #00f2fe 75%, #667eea 100%);
-    background-size: 600% 600%;
-    animation: rainbow-shift 12s ease-in-out infinite;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease-in-out infinite;
   }
 
   .glass-effect {
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  }
-
-  .glass-card {
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 
   .text-shadow {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
-  .glow-text {
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-  }
-
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  }
-
-  .parallax-slow {
-    transform: translateZ(0);
-    will-change: transform;
-  }
-}
-
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-@keyframes gradient-wave {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes gradient-flow {
-  0%, 100% { background-position: 0% 0%; }
-  25% { background-position: 100% 0%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-}
-
-@keyframes rainbow-shift {
-  0%, 100% { background-position: 0% 50%; }
-  20% { background-position: 20% 40%; }
-  40% { background-position: 80% 60%; }
-  60% { background-position: 100% 30%; }
-  80% { background-position: 40% 70%; }
-}
-
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(1deg); }
-  66% { transform: translateY(-5px) rotate(-1deg); }
-}
-
-@keyframes pulse-color {
-  0%, 100% { filter: hue-rotate(0deg) brightness(1); }
-  50% { filter: hue-rotate(90deg) brightness(1.2); }
-}
-
-@keyframes morph {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-}
-
-.animate-float-gentle {
-  animation: float-gentle 4s ease-in-out infinite;
-}
-
-.animate-pulse-color {
-  animation: pulse-color 3s ease-in-out infinite;
-}
-
-.animate-morph {
-  animation: morph 8s ease-in-out infinite;
-}
-
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
 }
