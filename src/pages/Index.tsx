@@ -59,7 +59,7 @@ const Index = () => {
       {/* Professional Navigation - Lightened fonts */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 glass-morph rounded-full px-6 py-3 shadow-lg border border-slate-200/50">
         <div className="flex items-center space-x-6">
-          <div className="text-lg font-medium text-slate-500 tracking-tight">
+          <div className="text-lg font-medium text-red-500 tracking-tight">
             Loom
           </div>
           <div className="hidden md:flex space-x-1 text-sm">
