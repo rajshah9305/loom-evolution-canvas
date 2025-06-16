@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from "react";
-import { Crown, Gem, Zap, Wand2, Sparkles2, Award, Trophy, Star } from "lucide-react";
+import { Crown, Gem, Zap, Wand2, Sparkles, Award, Trophy, Star } from "lucide-react";
 
 export const IterationPerfect = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +29,6 @@ export const IterationPerfect = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Luxurious floating elements
   const orbs = Array.from({ length: 8 }, (_, i) => (
     <div
       key={i}
@@ -79,9 +77,7 @@ export const IterationPerfect = () => {
 
   return (
     <section id="perfect" className="min-h-screen flex items-center gradient-loom-perfect relative overflow-hidden">
-      {/* Luxurious background with multiple layers */}
       <div className="absolute inset-0">
-        {/* Premium mesh pattern */}
         <div 
           className="absolute inset-0 opacity-[0.06] animate-gradient-shift"
           style={{
@@ -90,7 +86,6 @@ export const IterationPerfect = () => {
           }}
         />
         
-        {/* Subtle grid overlay */}
         <div 
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -100,7 +95,6 @@ export const IterationPerfect = () => {
         />
       </div>
 
-      {/* Luxurious floating orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {orbs}
       </div>
@@ -108,7 +102,6 @@ export const IterationPerfect = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className={`space-y-12 transition-all duration-1500 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            {/* Premium badge */}
             <div className="inline-flex items-center space-x-4 px-6 py-4 glass-morph text-slate-800 text-sm rounded-full border border-gradient-to-r from-indigo-200/50 to-pink-200/50 shadow-xl relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-pink-500/5 to-indigo-500/5 animate-gradient-shift" />
               <div className="relative flex items-center space-x-4">
@@ -124,7 +117,6 @@ export const IterationPerfect = () => {
               </div>
             </div>
             
-            {/* Spectacular title */}
             <h2 className="text-5xl md:text-6xl lg:text-8xl font-black leading-[0.85] tracking-tight relative">
               <span className="text-slate-900">Your Vision,</span>
               <br />
@@ -138,7 +130,6 @@ export const IterationPerfect = () => {
               </span>
             </h2>
             
-            {/* Premium content */}
             <div className="space-y-10">
               <div className="relative p-8 glass-morph rounded-3xl border border-gradient-to-r from-indigo-200/30 to-pink-200/30 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-pink-500 via-amber-500 to-indigo-500 animate-gradient-shift" />
@@ -157,7 +148,6 @@ export const IterationPerfect = () => {
               </p>
             </div>
             
-            {/* Master features showcase */}
             <div className="grid grid-cols-2 gap-6">
               {masterFeatures.map((feature, i) => (
                 <div 
@@ -178,27 +168,23 @@ export const IterationPerfect = () => {
               ))}
             </div>
 
-            {/* Premium CTA */}
             <div className="flex flex-col sm:flex-row gap-6">
               <button className="group relative px-10 py-5 bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-pink-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative flex items-center space-x-3">
                   <Award className="w-5 h-5" />
                   <span>Experience Loom Excellence</span>
-                  <Sparkles2 className="w-5 h-5" />
+                  <Sparkles className="w-5 h-5" />
                 </span>
               </button>
             </div>
           </div>
 
-          {/* Masterpiece showcase */}
           <div className={`transition-all duration-1500 delay-600 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <div className="relative">
-              {/* Premium glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-pink-500/15 via-amber-500/10 to-indigo-500/20 rounded-3xl blur-3xl animate-pulse" />
               
               <div className="relative glass-morph p-12 rounded-3xl shadow-3xl border border-gradient-to-r from-indigo-200/50 via-pink-200/30 to-amber-200/50 hover-lift-subtle group overflow-hidden">
-                {/* Premium background pattern */}
                 <div className="absolute inset-0 opacity-5">
                   <div 
                     className="w-full h-full animate-gradient-shift"
@@ -210,7 +196,6 @@ export const IterationPerfect = () => {
                 </div>
 
                 <div className="relative space-y-10">
-                  {/* Premium header */}
                   <div className="flex justify-between items-center pb-8 border-b border-gradient-to-r from-indigo-200/50 via-pink-200/30 to-amber-200/50">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 via-pink-500 via-amber-500 to-indigo-600 rounded-2xl shadow-xl relative overflow-hidden group-hover:scale-110 transition-transform duration-500">
@@ -228,7 +213,6 @@ export const IterationPerfect = () => {
                     </div>
                   </div>
 
-                  {/* Masterpiece project showcase */}
                   <div className="space-y-8">
                     <div className="text-center">
                       <h4 className="text-2xl font-black text-slate-800 mb-2 tracking-tight">
@@ -237,7 +221,6 @@ export const IterationPerfect = () => {
                       <p className="text-slate-500 font-medium">AI-crafted visual symphony</p>
                     </div>
 
-                    {/* Premium project preview */}
                     <div className="glass-morph rounded-3xl p-8 border border-gradient-to-r from-indigo-200/30 via-pink-200/20 to-amber-200/30 hover:border-gradient-to-r hover:from-indigo-300/50 hover:via-pink-300/30 hover:to-amber-300/50 transition-all duration-500 cursor-pointer group/project relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-pink-50/20 to-amber-50/30 opacity-0 group-hover/project:opacity-100 transition-opacity duration-500" />
                       
@@ -272,7 +255,6 @@ export const IterationPerfect = () => {
                       </div>
                     </div>
 
-                    {/* Premium achievement indicators */}
                     <div className="flex justify-center space-x-8 text-sm">
                       {['🏆 Award-Winning', '⚡ Lightning Fast', '🎨 Pixel Perfect', '🚀 Future Ready'].map((achievement, i) => (
                         <span 
