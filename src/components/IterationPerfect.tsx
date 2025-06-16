@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { Crown, Gem, Zap, Wand2, Sparkles, Award, Trophy, Star } from "lucide-react";
 
 export const IterationPerfect = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeFeature, setActiveFeature] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,247 +19,144 @@ export const IterationPerfect = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % 4);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const orbs = Array.from({ length: 8 }, (_, i) => (
+  // Elegant floating orbs
+  const orbs = Array.from({ length: 6 }, (_, i) => (
     <div
       key={i}
-      className="absolute animate-float opacity-40"
+      className="absolute rounded-full animate-float"
       style={{
-        width: `${24 + Math.random() * 48}px`,
-        height: `${24 + Math.random() * 48}px`,
-        background: `linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(236, 72, 153, 0.1), rgba(59, 130, 246, 0.1))`,
-        borderRadius: '50%',
+        width: `${20 + Math.random() * 40}px`,
+        height: `${20 + Math.random() * 40}px`,
+        background: `linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(15, 23, 42, 0.05))`,
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 8}s`,
-        animationDuration: `${8 + Math.random() * 6}s`,
-        filter: 'blur(1px)',
-        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)'
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${5 + Math.random() * 3}s`,
+        filter: 'blur(0.5px)'
       }}
     />
   ));
 
-  const masterFeatures = [
-    { 
-      icon: Crown, 
-      title: "Royal Design", 
-      desc: "Pixel-perfect layouts",
-      color: "from-amber-500 via-yellow-500 to-orange-500"
-    },
-    { 
-      icon: Gem, 
-      title: "Premium UX", 
-      desc: "Flawless interactions",
-      color: "from-emerald-500 via-teal-500 to-cyan-500"
-    },
-    { 
-      icon: Zap, 
-      title: "Lightning Fast", 
-      desc: "Optimized performance",
-      color: "from-violet-500 via-purple-500 to-indigo-500"
-    },
-    { 
-      icon: Wand2, 
-      title: "AI Mastery", 
-      desc: "Intelligent adaptation",
-      color: "from-pink-500 via-rose-500 to-red-500"
-    }
-  ];
-
   return (
     <section id="perfect" className="min-h-screen flex items-center gradient-loom-perfect relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 opacity-[0.06] animate-gradient-shift"
-          style={{
-            background: `radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 25%), radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.08) 0%, transparent 25%), radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.06) 0%, transparent 25%), radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.04) 0%, transparent 25%)`,
-            backgroundSize: '200px 200px'
-          }}
-        />
-        
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(79, 70, 229, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 70, 229, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
-          }}
-        />
-      </div>
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Floating orbs system */}
+      <div className="absolute inset-0 opacity-60">
         {orbs}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className={`space-y-12 transition-all duration-1500 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="inline-flex items-center space-x-4 px-6 py-4 glass-morph text-slate-800 text-sm rounded-full border border-gradient-to-r from-indigo-200/50 to-pink-200/50 shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-pink-500/5 to-indigo-500/5 animate-gradient-shift" />
-              <div className="relative flex items-center space-x-4">
-                <Crown className="w-5 h-5 text-amber-600" />
-                <span className="font-mono text-xs font-bold">04</span>
-                <span className="text-slate-400">/</span>
-                <span className="font-bold">The Masterpiece</span>
-                <div className="flex space-x-1">
-                  <Star className="w-3 h-3 text-amber-500 animate-pulse" />
-                  <Star className="w-3 h-3 text-amber-500 animate-pulse" style={{ animationDelay: '0.3s' }} />
-                  <Star className="w-3 h-3 text-amber-500 animate-pulse" style={{ animationDelay: '0.6s' }} />
-                </div>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+            <div className="inline-flex items-center space-x-3 px-4 py-2 glass-morph text-slate-800 text-sm rounded-full border border-slate-200/50 shadow-sm">
+              <span className="text-lg">✨</span>
+              <span className="font-mono text-xs">04</span>
+              <span className="text-slate-400">/</span>
+              <span>The Masterpiece</span>
+              <div className="flex space-x-1">
+                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse" />
+                <div className="w-1.5 h-1.5 bg-slate-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
               </div>
             </div>
             
-            <h2 className="text-5xl md:text-6xl lg:text-8xl font-black leading-[0.85] tracking-tight relative">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
               <span className="text-slate-900">Your Vision,</span>
               <br />
-              <span className="relative">
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-600 bg-clip-text text-transparent blur-sm">
-                  Perfectly Woven
-                </span>
-                <span className="relative bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-600 bg-clip-text text-transparent">
-                  Perfectly Woven
-                </span>
+              <span className="text-gradient-primary">
+                Perfectly Woven
               </span>
             </h2>
             
-            <div className="space-y-10">
-              <div className="relative p-8 glass-morph rounded-3xl border border-gradient-to-r from-indigo-200/30 to-pink-200/30 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-pink-500 via-amber-500 to-indigo-500 animate-gradient-shift" />
-                <div className="absolute -top-2 -right-2">
-                  <Trophy className="w-6 h-6 text-amber-500 animate-bounce" />
-                </div>
-                <p className="text-xl text-slate-800 font-bold leading-relaxed">
-                  "The ultimate synthesis of human creativity and AI precision."
-                </p>
-              </div>
+            <div className="space-y-6">
+              <p className="text-lg text-slate-800 font-semibold leading-relaxed">
+                "The final form of creation."
+              </p>
               
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Witness the pinnacle of AI-powered design evolution. Claude now interprets abstract 
-                concepts with the intuition of a master designer, generating production-ready 
-                interfaces that transcend expectations and inspire innovation.
+              <p className="text-base text-slate-700 leading-relaxed">
+                The culmination of AI evolution. Claude now interprets abstract design concepts 
+                with the intuition of a master craftsperson, generating production-ready interfaces that 
+                rival the finest human-designed experiences.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
-              {masterFeatures.map((feature, i) => (
-                <div 
-                  key={feature.title}
-                  className={`group p-6 glass-morph rounded-2xl border border-slate-200/50 hover:border-slate-300/50 cursor-pointer transition-all duration-700 hover:scale-105 relative overflow-hidden ${activeFeature === i ? 'ring-2 ring-indigo-500/50 shadow-xl' : ''}`}
-                  style={{ transitionDelay: `${i * 150}ms` }}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                  <div className="relative">
-                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <feature.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-lg text-slate-800 font-bold mb-1">{feature.title}</div>
-                    <div className="text-sm text-slate-600">{feature.desc}</div>
-                    <div className={`w-full h-1 bg-gradient-to-r ${feature.color} rounded-full mt-3 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left`} />
-                  </div>
+            <div className="space-y-4 p-6 glass-morph rounded-xl border border-slate-200/30 shadow-sm">
+              <div className="text-xs text-slate-600 font-mono uppercase tracking-wider">Visionary Input</div>
+              <div className="bg-white p-4 rounded-lg border border-slate-200 font-mono text-sm shadow-sm">
+                "design a creative workspace that inspires innovation"
+              </div>
+              <div className="flex items-center space-x-3 text-xs text-slate-600">
+                <div className="flex space-x-1">
+                  <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse" />
+                  <div className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
                 </div>
-              ))}
+                <span>Crafting digital poetry...</span>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <button className="group relative px-10 py-5 bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-pink-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="relative flex items-center space-x-3">
-                  <Award className="w-5 h-5" />
-                  <span>Experience Loom Excellence</span>
-                  <Sparkles className="w-5 h-5" />
-                </span>
-              </button>
-            </div>
+            <button className="px-8 py-4 bg-slate-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-slate-700">
+              Experience Loom for Yourself
+            </button>
           </div>
 
-          <div className={`transition-all duration-1500 delay-600 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+          <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+            {/* Creative Workspace Demo - The Masterpiece */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-pink-500/15 via-amber-500/10 to-indigo-500/20 rounded-3xl blur-3xl animate-pulse" />
-              
-              <div className="relative glass-morph p-12 rounded-3xl shadow-3xl border border-gradient-to-r from-indigo-200/50 via-pink-200/30 to-amber-200/50 hover-lift-subtle group overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                  <div 
-                    className="w-full h-full animate-gradient-shift"
-                    style={{
-                      background: `conic-gradient(from 0deg at 50% 50%, rgba(79, 70, 229, 0.2) 0deg, rgba(236, 72, 153, 0.15) 60deg, rgba(59, 130, 246, 0.1) 120deg, rgba(16, 185, 129, 0.1) 180deg, rgba(245, 158, 11, 0.15) 240deg, rgba(79, 70, 229, 0.2) 360deg)`,
-                      backgroundSize: '200px 200px'
-                    }}
-                  />
-                </div>
-
-                <div className="relative space-y-10">
-                  <div className="flex justify-between items-center pb-8 border-b border-gradient-to-r from-indigo-200/50 via-pink-200/30 to-amber-200/50">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 via-pink-500 via-amber-500 to-indigo-600 rounded-2xl shadow-xl relative overflow-hidden group-hover:scale-110 transition-transform duration-500">
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10" />
-                      </div>
-                      <span className="text-slate-800 font-black text-2xl tracking-tight bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-                        LOOM STUDIO
-                      </span>
-                    </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-slate-500/5 to-indigo-500/10 rounded-2xl blur-xl" />
+              <div className="relative glass-morph p-8 rounded-2xl shadow-2xl border border-slate-200/50 hover-lift-subtle">
+                <div className="space-y-8">
+                  {/* Creative workspace header */}
+                  <div className="flex justify-between items-center pb-6 border-b border-slate-200/50">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 glass-effect rounded-xl border border-indigo-200/50 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer">
-                        <Crown className="w-5 h-5 text-amber-600" />
+                      <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-slate-600 to-indigo-400 rounded-xl shadow-lg relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
                       </div>
+                      <span className="text-slate-800 font-bold text-xl tracking-tight">Loom Studio</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      {[1, 2].map((i) => (
+                        <div key={i} className="w-8 h-8 glass-effect rounded-full border border-slate-200/50 flex items-center justify-center hover:scale-110 transition-transform duration-200 cursor-pointer">
+                          <div className="w-3 h-3 bg-slate-400 rounded-full" />
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="space-y-8">
+                  {/* Creative project showcase */}
+                  <div className="space-y-6">
                     <div className="text-center">
-                      <h4 className="text-2xl font-black text-slate-800 mb-2 tracking-tight">
-                        Creative Ecosystem Suite
+                      <h4 className="text-xl font-bold text-slate-800 mb-1 tracking-tight">
+                        Brand Identity Suite
                       </h4>
-                      <p className="text-slate-500 font-medium">AI-crafted visual symphony</p>
+                      <p className="text-slate-500 text-sm">AI-crafted visual ecosystem</p>
                     </div>
 
-                    <div className="glass-morph rounded-3xl p-8 border border-gradient-to-r from-indigo-200/30 via-pink-200/20 to-amber-200/30 hover:border-gradient-to-r hover:from-indigo-300/50 hover:via-pink-300/30 hover:to-amber-300/50 transition-all duration-500 cursor-pointer group/project relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/30 via-pink-50/20 to-amber-50/30 opacity-0 group-hover/project:opacity-100 transition-opacity duration-500" />
+                    {/* Project preview */}
+                    <div className="glass-morph rounded-2xl p-6 border border-slate-200/30 hover:border-slate-300/50 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+                      <div className="w-full h-32 rounded-xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50">
+                        <div className="grid grid-cols-3 gap-2">
+                          {[1, 2, 3].map((i) => (
+                            <div key={i} className="w-12 h-12 glass-effect rounded-lg flex items-center justify-center relative">
+                              <div className={`w-6 h-6 rounded ${i === 1 ? 'bg-gradient-to-br from-indigo-500 to-slate-600' : i === 2 ? 'bg-gradient-to-br from-slate-600 to-indigo-500' : 'bg-gradient-to-br from-indigo-400 to-slate-500'}`} />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                       
-                      <div className="relative">
-                        <div className="w-full h-40 rounded-2xl mb-8 flex items-center justify-center group-hover/project:scale-105 transition-transform duration-500 relative overflow-hidden bg-gradient-to-br from-slate-100 via-indigo-50 to-pink-50">
-                          <div className="grid grid-cols-3 gap-3">
-                            {[1, 2, 3].map((i) => (
-                              <div key={i} className="relative group/item">
-                                <div className="w-16 h-16 glass-effect rounded-2xl flex items-center justify-center relative overflow-hidden">
-                                  <div className={`w-8 h-8 rounded-xl bg-gradient-to-br ${masterFeatures[i-1]?.color || 'from-slate-500 to-slate-600'} shadow-lg`} />
-                                </div>
-                                {i === activeFeature + 1 && (
-                                  <div className="absolute -top-1 -right-1">
-                                    <Star className="w-4 h-4 text-amber-500 animate-pulse" />
-                                  </div>
-                                )}
-                              </div>
-                            ))}
-                          </div>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <div className="text-slate-800 font-bold text-lg">Complete</div>
+                          <div className="text-slate-500 text-sm">Logo • Colors • Typography</div>
                         </div>
-                        
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <div className="text-slate-800 font-black text-xl">Masterpiece Complete</div>
-                            <div className="text-slate-500 font-medium">Brand • UX • Performance • AI</div>
-                          </div>
-                          <button className="px-6 py-3 bg-gradient-to-r from-indigo-500 via-pink-500 to-amber-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden group/btn">
-                            <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-pink-500 to-indigo-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-                            <span className="relative">Launch</span>
-                          </button>
-                        </div>
+                        <button className="btn-primary hover:scale-105 transition-transform duration-200">
+                          Export
+                        </button>
                       </div>
                     </div>
 
-                    <div className="flex justify-center space-x-8 text-sm">
-                      {['🏆 Award-Winning', '⚡ Lightning Fast', '🎨 Pixel Perfect', '🚀 Future Ready'].map((achievement, i) => (
-                        <span 
-                          key={achievement} 
-                          className={`font-semibold transition-all duration-500 cursor-pointer hover:scale-110 ${activeFeature === i ? 'text-indigo-700' : 'text-slate-500 hover:text-slate-700'}`}
-                        >
-                          {achievement}
+                    {/* Creative process indicators */}
+                    <div className="flex justify-center space-x-6 text-xs text-slate-500">
+                      {['🎨 Creative', '⚡ Instant', '🔄 Iterative'].map((item, i) => (
+                        <span key={item} className="hover:text-slate-700 transition-colors duration-200 cursor-pointer">
+                          {item}
                         </span>
                       ))}
                     </div>
@@ -270,14 +165,8 @@ export const IterationPerfect = () => {
               </div>
             </div>
 
-            <div className="mt-10 text-center">
-              <div className="inline-flex items-center space-x-3 px-6 py-3 glass-morph rounded-full border border-gradient-to-r from-indigo-200/50 via-pink-200/30 to-amber-200/50 text-base font-bold shadow-lg">
-                <Trophy className="w-5 h-5 text-amber-600" />
-                <span className="bg-gradient-to-r from-slate-700 via-indigo-700 to-pink-700 bg-clip-text text-transparent">
-                  Where imagination transcends reality
-                </span>
-                <Gem className="w-5 h-5 text-indigo-600" />
-              </div>
+            <div className="mt-6 text-center text-sm text-slate-700 font-semibold">
+              Where imagination meets implementation
             </div>
           </div>
         </div>
